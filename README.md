@@ -37,7 +37,7 @@ neo4j-community-4.2.4/bin/neo4j start
 Then you can load one od available `.dump` file databases to your database.
 
 ```
-./neo4j-community-4.2.4/bin/neo4j-admin load --from=../data/dumps/test.dump --database=neo4j --force
+./neo4j-community-4.2.4/bin/neo4j-admin load --from=../database/FILE.dump --database=neo4j --force
 ```
 
 the `--force` will take care of the upgrade if you use a more recent version of neo4j, just remember to edit the config file in `conf\neo4j.conf` and set ``dbms.allow_upgrade=true`, [more info](https://neo4j.com/docs/operations-manual/current/configuration/neo4j-conf/)
