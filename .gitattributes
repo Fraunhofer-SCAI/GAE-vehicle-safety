@@ -1,0 +1,6 @@
+text
+*.js linguist-detectable=false
+*.java linguist-detectable=false
+*.html linguist-detectable=false
+*.xml linguist-detectable=false
+*.dump linguist-detectable=true
