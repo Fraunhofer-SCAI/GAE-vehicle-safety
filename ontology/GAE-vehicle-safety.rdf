@@ -1,0 +1,1172 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://caewebvis.scai.fraunhofer.de/GAE//"
+     xml:base="https://caewebvis.scai.fraunhofer.de/GAE//"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/linkedTo -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/linkedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dbpedia.org/ontology/linkedTo"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://dbpedia.org/ontology/linkedTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/RatingOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+                <owl:someValuesFrom rdf:resource="http://schema.org/Vehicle"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/Category"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle"/>
+                <owl:someValuesFrom rdf:resource="http://schema.org/Vehicle"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//CausedTo -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Change"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//Behavior"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Design"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Change"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.org/Vehicle"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasModel -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasModel">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+                <owl:allValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+                <owl:allValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasPart -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasPart">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform"/>
+                <owl:someValuesFrom rdf:resource="http://schema.org/Vehicle"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Platform"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasReference -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasReference">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://schema.org/Vehicle"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//InPart -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//InPart">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+                <owl:allValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+                <owl:allValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+                <owl:allValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+                <owl:allValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+                <owl:allValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//Behavior"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Design"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.aktors.org/ontology/support#Year"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SameAs -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SameAs">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Semantic"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//StatusOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo -->
+
+    <owl:ObjectProperty rdf:about="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://dbpedia.org/ontology/productionStartYear -->
+
+    <owl:ObjectProperty rdf:about="https://dbpedia.org/ontology/productionStartYear">
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://dbpedia.org/ontology/productionStartYear"/>
+                <owl:someValuesFrom rdf:resource="http://schema.org/Vehicle"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.aktors.org/ontology/support#Year"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+                <owl:someValuesFrom rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+            </owl:Restriction>
+        </rdfs:range>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Platform"/>
+                                    <rdf:Description rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.ethereal.cz/irao/#Protocol -->
+
+    <owl:Class rdf:about="http://ontology.ethereal.cz/irao/#Protocol">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Vehicle -->
+
+    <owl:Class rdf:about="http://schema.org/Vehicle"/>
+    
+
+
+    <!-- http://www.aktors.org/ontology/support#Year -->
+
+    <owl:Class rdf:about="http://www.aktors.org/ontology/support#Year">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/Category -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/Category">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/Regulation -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/Regulation">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Attribute -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Barrier -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Change -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Change">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Connection -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Connection">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Design -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Design">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Element -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Element">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Group -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Group">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Impactor -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Model -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Model">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Node -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Node">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Platform -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Platform">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Safety -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Safety">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//Behavior -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//Behavior">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//Weld -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//Weld">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#Semantic -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#Semantic">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#Simulation -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
