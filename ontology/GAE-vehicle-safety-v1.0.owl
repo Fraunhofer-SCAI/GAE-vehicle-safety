@@ -1,1162 +1,787 @@
 <?xml version="1.0"?>
-<Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="https://caewebvis.scai.fraunhofer.de/GAE/"
+<rdf:RDF xmlns="https://caewebvis.scai.fraunhofer.de/gae#"
+     xml:base="https://caewebvis.scai.fraunhofer.de/gae"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     ontologyIRI="https://caewebvis.scai.fraunhofer.de/GAE/">
-    <Prefix name="" IRI="https://caewebvis.scai.fraunhofer.de/GAE//"/>
-    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
-    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
-    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
-    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
-    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://purl.org/dc/elements/1.1/</Import>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">20230509</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
-        <Literal>GAE-vehicle-safety</Literal>
-    </Annotation>
-    <Annotation>
-        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
-        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">101</Literal>
-    </Annotation>
-    <Declaration>
-        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://schema.org/Vehicle"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="http://www.aktors.org/ontology/support#Year"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="AdultOccupantProtection"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Category"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="ChildOccupantProtection"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="Regulation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Arcitecture"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Attribute"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Barrier"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Change"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Connection"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Design"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Element"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#FiniteElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Group"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Impactor"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#MachineLearning"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Model"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Node"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Platform"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#ResultPage"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#Safety"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#SafetyAssist"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#UpperBody"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="#VulnerableRoadUser"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/Behavior"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/Weld"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/#CommonNode"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/#RigidBodyElement"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/#Semantic"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="/#Simulation"/>
-    </Declaration>
-    <Declaration>
-        <Class IRI="FEModel/#Part"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="DefinedAs"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="RatingOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="hasVehicle"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/ArributeOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/CausedTo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/ChangedTo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/ConnectedBy"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/GroupBehaviorOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/GroupDesignOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/GroupFeatureOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasBarrier"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasChangeType"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasEnergyPart"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasImpactor"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasModel"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasPart"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasPlatform"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasReference"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/HasUpperBody"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/InPart"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/OutputElementOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/OutputNodeOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/PartBehaviorOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/PartDesignOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/ProtocolOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/ProtocolYear"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/SameAs"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/SemanticOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/SimilarityTo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/SimulationResult"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="/StatusOf"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
-    </Declaration>
-    <Declaration>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
-    </Declaration>
-    <Declaration>
-        <Datatype abbreviatedIRI="xsd:date"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/publisher"/>
-    </Declaration>
-    <Declaration>
-        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
-    </Declaration>
-    <SubClassOf>
-        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-        <Class IRI="Regulation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="http://www.aktors.org/ontology/support#Year"/>
-        <Class IRI="http://schema.org/Vehicle"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="AdultOccupantProtection"/>
-        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Category"/>
-        <Class IRI="http://schema.org/Vehicle"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="ChildOccupantProtection"/>
-        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="Regulation"/>
-        <Class IRI="#Safety"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Arcitecture"/>
-        <Class IRI="http://schema.org/Vehicle"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Attribute"/>
-        <Class IRI="http://schema.org/Vehicle"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Barrier"/>
-        <Class IRI="#Safety"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Change"/>
-        <Class IRI="#FiniteElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Connection"/>
-        <Class IRI="FEModel/#Part"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Design"/>
-        <Class IRI="#MachineLearning"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Element"/>
-        <Class IRI="#Model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#FiniteElement"/>
-        <Class IRI="http://schema.org/Vehicle"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Group"/>
-        <Class IRI="#MachineLearning"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Impactor"/>
-        <Class IRI="#Safety"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#MachineLearning"/>
-        <Class IRI="#FiniteElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Model"/>
-        <Class IRI="#FiniteElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Node"/>
-        <Class IRI="#Model"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Platform"/>
-        <Class IRI="#Arcitecture"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#ResultPage"/>
-        <Class IRI="Regulation"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#Safety"/>
-        <Class IRI="#Attribute"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#SafetyAssist"/>
-        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#UpperBody"/>
-        <Class IRI="#Arcitecture"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="#VulnerableRoadUser"/>
-        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/Behavior"/>
-        <Class IRI="#MachineLearning"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/Weld"/>
-        <Class IRI="#Connection"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/#CommonNode"/>
-        <Class IRI="#Connection"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/#RigidBodyElement"/>
-        <Class IRI="#Connection"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/#Semantic"/>
-        <Class IRI="FEModel/#Part"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="/#Simulation"/>
-        <Class IRI="#FiniteElement"/>
-    </SubClassOf>
-    <SubClassOf>
-        <Class IRI="FEModel/#Part"/>
-        <Class IRI="#Model"/>
-    </SubClassOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
-        <ObjectProperty IRI="/ArributeOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="DefinedAs"/>
-        <ObjectProperty IRI="/ArributeOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="RatingOf"/>
-        <ObjectProperty IRI="/ArributeOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/CausedTo"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/ChangedTo"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/ConnectedBy"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/GroupBehaviorOf"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/GroupDesignOf"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/GroupFeatureOf"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/HasBarrier"/>
-        <ObjectProperty IRI="/SimulationResult"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/HasChangeType"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/HasEnergyPart"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/HasImpactor"/>
-        <ObjectProperty IRI="/SimulationResult"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/HasModel"/>
-        <ObjectProperty IRI="/SimulationResult"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/HasPart"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/HasReference"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/InPart"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/OutputElementOf"/>
-        <ObjectProperty IRI="/SimulationResult"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/OutputNodeOf"/>
-        <ObjectProperty IRI="/SimulationResult"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/PartBehaviorOf"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/PartDesignOf"/>
-        <ObjectProperty IRI="/MachinLearningOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/ProtocolOf"/>
-        <ObjectProperty IRI="/ArributeOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/ProtocolYear"/>
-        <ObjectProperty IRI="/ArributeOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/SameAs"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/SemanticOf"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/SimilarityTo"/>
-        <ObjectProperty IRI="/SimulationResult"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/SimulationResult"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="/StatusOf"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectProperty IRI="/ArributeOf"/>
-    </SubObjectPropertyOf>
-    <SubObjectPropertyOf>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-    </SubObjectPropertyOf>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
-            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="DefinedAs"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="DefinedAs"/>
-            <Class IRI="AdultOccupantProtection"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="DefinedAs"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="DefinedAs"/>
-            <Class IRI="ChildOccupantProtection"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="DefinedAs"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="DefinedAs"/>
-            <Class IRI="#SafetyAssist"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="DefinedAs"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="DefinedAs"/>
-            <Class IRI="#VulnerableRoadUser"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="RatingOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="RatingOf"/>
-            <Class IRI="http://schema.org/Vehicle"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="hasVehicle"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasVehicle"/>
-            <Class IRI="Category"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/ArributeOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ArributeOf"/>
-            <Class IRI="#Attribute"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/CausedTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/CausedTo"/>
-            <Class IRI="#Change"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/ChangedTo"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/ChangedTo"/>
-            <ObjectUnionOf>
-                <Class IRI="#Connection"/>
-                <Class IRI="/Weld"/>
-                <Class IRI="/#CommonNode"/>
-                <Class IRI="/#RigidBodyElement"/>
-                <Class IRI="FEModel/#Part"/>
-            </ObjectUnionOf>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/ConnectedBy"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ConnectedBy"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/GroupBehaviorOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/GroupBehaviorOf"/>
-            <Class IRI="/Behavior"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/GroupDesignOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/GroupDesignOf"/>
-            <Class IRI="#Design"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/GroupFeatureOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/GroupFeatureOf"/>
-            <Class IRI="#Group"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasBarrier"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasBarrier"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasChangeType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasChangeType"/>
-            <Class IRI="#Connection"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasChangeType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasChangeType"/>
-            <Class IRI="/Weld"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasChangeType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasChangeType"/>
-            <Class IRI="/#CommonNode"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasChangeType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasChangeType"/>
-            <Class IRI="/#RigidBodyElement"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasChangeType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasChangeType"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasEnergyPart"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/SimilarityTo"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/HasFiniteElmentModel"/>
-            <Class IRI="http://schema.org/Vehicle"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasImpactor"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasImpactor"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasModel"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/HasModel"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasPart"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasPart"/>
-            <Class IRI="#Group"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasPlatform"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasPlatform"/>
-            <Class IRI="http://schema.org/Vehicle"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasReference"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/HasReference"/>
-            <Class IRI="#Model"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/HasUpperBody"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/HasUpperBody"/>
-            <Class IRI="http://schema.org/Vehicle"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/InPart"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/InPart"/>
-            <Class IRI="#Element"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/InPart"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/InPart"/>
-            <Class IRI="#Node"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/OutputElementOf"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/OutputElementOf"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/OutputNodeOf"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/OutputNodeOf"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/PartBehaviorOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/PartBehaviorOf"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/PartDesignOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/PartDesignOf"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/ProtocolOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ProtocolOf"/>
-            <Class IRI="#Attribute"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/ProtocolYear"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ProtocolYear"/>
-            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/SameAs"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/SameAs"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/SemanticOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/SemanticOf"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/SimilarityTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/SimilarityTo"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="/StatusOf"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/StatusOf"/>
-            <Class IRI="#Model"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
-            <Class IRI="http://schema.org/Vehicle"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-            <Class IRI="#Barrier"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-            <Class IRI="#Element"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-            <Class IRI="#Impactor"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-            <Class IRI="#Node"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyDomain>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyDomain>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
-            <Class IRI="#ResultPage"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="DefinedAs"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="DefinedAs"/>
-            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="RatingOf"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty IRI="RatingOf"/>
-            <Class IRI="AdultOccupantProtection"/>
-        </ObjectMaxCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="RatingOf"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty IRI="RatingOf"/>
-            <Class IRI="ChildOccupantProtection"/>
-        </ObjectMaxCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="RatingOf"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty IRI="RatingOf"/>
-            <Class IRI="#SafetyAssist"/>
-        </ObjectMaxCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="RatingOf"/>
-        <ObjectMaxCardinality cardinality="1">
-            <ObjectProperty IRI="RatingOf"/>
-            <Class IRI="#VulnerableRoadUser"/>
-        </ObjectMaxCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="hasVehicle"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="hasVehicle"/>
-            <Class IRI="http://schema.org/Vehicle"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ArributeOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ArributeOf"/>
-            <Class IRI="#Model"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/CausedTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/CausedTo"/>
-            <Class IRI="#Group"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ChangedTo"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/ChangedTo"/>
-            <ObjectUnionOf>
-                <Class IRI="#Connection"/>
-                <Class IRI="/Weld"/>
-                <Class IRI="/#CommonNode"/>
-                <Class IRI="/#RigidBodyElement"/>
-                <Class IRI="FEModel/#Part"/>
-            </ObjectUnionOf>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ConnectedBy"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ConnectedBy"/>
-            <Class IRI="#Connection"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ConnectedBy"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ConnectedBy"/>
-            <Class IRI="/Weld"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ConnectedBy"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ConnectedBy"/>
-            <Class IRI="/#CommonNode"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ConnectedBy"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ConnectedBy"/>
-            <Class IRI="/#RigidBodyElement"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/GroupBehaviorOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/GroupBehaviorOf"/>
-            <Class IRI="#Group"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/GroupDesignOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/GroupDesignOf"/>
-            <Class IRI="#Group"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/GroupFeatureOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/GroupFeatureOf"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasBarrier"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasBarrier"/>
-            <Class IRI="#Barrier"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasChangeType"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasChangeType"/>
-            <Class IRI="#Change"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasEnergyPart"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/SimilarityTo"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasFiniteElmentModel"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasFiniteElmentModel"/>
-            <Class IRI="#Model"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasImpactor"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasImpactor"/>
-            <Class IRI="#Impactor"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasModel"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/HasModel"/>
-            <Class IRI="#Model"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasPart"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasPart"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasPlatform"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/HasPlatform"/>
-            <Class IRI="#Platform"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasReference"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/HasReference"/>
-            <Class IRI="#Model"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/HasUpperBody"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/HasUpperBody"/>
-            <Class IRI="#UpperBody"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/InPart"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/InPart"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/OutputElementOf"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/OutputElementOf"/>
-            <Class IRI="#Element"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/OutputNodeOf"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="/OutputNodeOf"/>
-            <Class IRI="#Node"/>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/PartBehaviorOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/PartBehaviorOf"/>
-            <Class IRI="/Behavior"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/PartDesignOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/PartDesignOf"/>
-            <Class IRI="#Design"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ProtocolOf"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/ProtocolOf"/>
-            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/ProtocolYear"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/ProtocolYear"/>
-            <Class IRI="http://www.aktors.org/ontology/support#Year"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/SameAs"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/SameAs"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/SemanticOf"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/SemanticOf"/>
-            <Class IRI="/#Semantic"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/SimilarityTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="/SimilarityTo"/>
-            <Class IRI="/#Simulation"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="/StatusOf"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty IRI="/StatusOf"/>
-            <Class IRI="#Model"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
-            <Class IRI="FEModel/#Part"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
-        <ObjectExactCardinality cardinality="1">
-            <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
-            <Class IRI="http://www.aktors.org/ontology/support#Year"/>
-        </ObjectExactCardinality>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectSomeValuesFrom>
-            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
-        </ObjectSomeValuesFrom>
-    </ObjectPropertyRange>
-    <ObjectPropertyRange>
-        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-        <ObjectAllValuesFrom>
-            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
-            <ObjectIntersectionOf>
-                <Class IRI="#Model"/>
-                <ObjectUnionOf>
-                    <Class IRI="#Platform"/>
-                    <Class IRI="#UpperBody"/>
-                </ObjectUnionOf>
-            </ObjectIntersectionOf>
-        </ObjectAllValuesFrom>
-    </ObjectPropertyRange>
-</Ontology>
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:terms="http://purl.org/dc/terms/">
+    <owl:Ontology rdf:about="https://caewebvis.scai.fraunhofer.de/gae">
+        <terms:contributor>Prof. Dr. Jochen Garcke</terms:contributor>
+        <terms:creator>Anahita Pakiman</terms:creator>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-05-09</terms:issued>
+        <terms:rights>This ontology is distributed under a Creative Commons Attribution 4.0 International (CC BY 4.0) - https://creativecommons.org/licenses/by/4.0/</terms:rights>
+        <terms:title>GAE-vehicle-safety</terms:title>
+        <rdfs:comment>In the automotive industry a significant amount of the research and development (R\&amp;D) data stems from computer-aided engineering (CAE) in several disciplines.
+  Introducing semantics for this domain improves the accessibility of the data and, in particular, will contribute to the cross-functional use of the data. In this work, we provide  an organized schema that incorporates information from various structured and unstructured data sources, taking care to include relevant concepts within the domain. The present work originates from the vehicle safety R&amp;D process, which includes computer-aided design, CAE, and safety attributes from vehicle performance assessment programs. In particular, we propose semantics that enable searchability, filtering, recommendation, and prediction for crash CAE data during the automotive R&amp;D process for vehicle safety. Furthermore, the data modelling enables multidisciplinary problem-solving with respect to other aspects of vehicle development, and outline the use of the ontology for R&amp;D on the combination of passive and active safety in the future.
+We describe previous efforts in comparison to our proposal, discuss its strengths and limitations, and identify areas for future work.</rdfs:comment>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.0</owl:versionInfo>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/contributor -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/contributor"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/creator"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/issued -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/issued"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/modified -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/modified"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/publisher"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/rights -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/rights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
+    
+
+
+    <!-- http://www.w3.org/2004/02/skos/core#note -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2004/02/skos/core#note"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2001/XMLSchema#date -->
+
+    <rdfs:Datatype rdf:about="http://www.w3.org/2001/XMLSchema#date"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/linkedTo -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/linkedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/RatingOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//CausedTo -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasModel -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasModel">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasPart -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasPart">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//HasReference -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//HasReference">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//InPart -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//InPart">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SameAs -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SameAs">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//StatusOf -->
+
+    <owl:ObjectProperty rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo -->
+
+    <owl:ObjectProperty rdf:about="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo">
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <rdfs:subPropertyOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://ontology.ethereal.cz/irao/#Protocol -->
+
+    <owl:Class rdf:about="http://ontology.ethereal.cz/irao/#Protocol">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://schema.org/Vehicle -->
+
+    <owl:Class rdf:about="http://schema.org/Vehicle"/>
+    
+
+
+    <!-- http://www.aktors.org/ontology/support#Year -->
+
+    <owl:Class rdf:about="http://www.aktors.org/ontology/support#Year">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/Category -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/Category">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/Regulation -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/Regulation">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Attribute -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Barrier -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Change -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Change">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Connection -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Connection">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Design -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Design">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Element -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Element">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement">
+        <rdfs:subClassOf rdf:resource="http://schema.org/Vehicle"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Group -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Group">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Impactor -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Model -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Model">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Node -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Node">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Platform -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Platform">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#Safety -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#Safety">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser">
+        <rdfs:subClassOf rdf:resource="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//Behavior -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//Behavior">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//Weld -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//Weld">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#Semantic -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#Semantic">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE//#Simulation -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </owl:Class>
+    
+
+
+    <!-- https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part -->
+
+    <owl:Class rdf:about="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part">
+        <rdfs:subClassOf rdf:resource="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/">
+        <terms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2012-06-14</terms:modified>
+        <terms:publisher rdf:resource="http://purl.org/dc/aboutdcmi#DCMI"/>
+        <terms:title xml:lang="en">Dublin Core Metadata Element Set, Version 1.1</terms:title>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/contributor">
+        <terms:description xml:lang="en">The guidelines for using names of persons or organizations as creators also apply to contributors.  Typically, the name of a Contributor should be used to indicate the entity.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">An entity responsible for making contributions to the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Contributor</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/coverage">
+        <terms:description xml:lang="en">Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Coverage</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/coverage) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/creator">
+        <terms:description xml:lang="en">Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">An entity primarily responsible for making the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Creator</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/date">
+        <terms:description xml:lang="en">Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a &apos;/&apos; (slash) character.  Either the start or end date may be missing.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">A point or period of time associated with an event in the lifecycle of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Date</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/date) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/description">
+        <terms:description xml:lang="en">Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">An account of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Description</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/format">
+        <terms:description xml:lang="en">Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of Internet Media Types [[MIME](https://www.iana.org/assignments/media-types/media-types.xhtml)].</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">The file format, physical medium, or dimensions of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Format</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/format) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/identifier">
+        <terms:description xml:lang="en">Recommended practice is to identify the resource by means of a string conforming to an identification system.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">An unambiguous reference to the resource within a given context.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Identifier</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/identifier) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/language">
+        <terms:description xml:lang="en">Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 [[IETF-BCP47](https://tools.ietf.org/html/bcp47)] language tag.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">A language of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Language</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/language) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/publisher">
+        <terms:description xml:lang="en">Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">An entity responsible for making the resource available.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Publisher</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/relation">
+        <terms:description xml:lang="en">Recommended practice is to identify the related resource by means of a URI. If this is not possible or feasible, a string conforming to a formal identification system may be provided.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">A related resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Relation</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/relation) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/rights">
+        <terms:description xml:lang="en">Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">Information about rights held in and over the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Rights</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/rights) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/source">
+        <terms:description xml:lang="en">The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">A related resource from which the described resource is derived.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Source</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/source) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/subject">
+        <terms:description xml:lang="en">Typically, the subject will be represented using keywords, key phrases, or classification codes.  Recommended best practice is to use a controlled vocabulary.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">The topic of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Subject</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/subject) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/title">
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">A name given to the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Title</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/title) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/dc/elements/1.1/type">
+        <terms:description xml:lang="en">Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [[DCMI-TYPE](http://dublincore.org/documents/dcmi-type-vocabulary/)]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.</terms:description>
+        <terms:issued rdf:datatype="http://www.w3.org/2001/XMLSchema#date">1999-07-02</terms:issued>
+        <rdfs:comment xml:lang="en">The nature or genre of the resource.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/dc/elements/1.1/"/>
+        <rdfs:label xml:lang="en">Type</rdfs:label>
+        <skos:note xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/type) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</skos:note>
+    </rdf:Description>
+</rdf:RDF>
 
 
 
