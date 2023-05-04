@@ -1,0 +1,1168 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://caewebvis.scai.fraunhofer.de/GAE/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://caewebvis.scai.fraunhofer.de/GAE/">
+    <Prefix name="" IRI="https://caewebvis.scai.fraunhofer.de/GAE//"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://purl.org/dc/elements/1.1/</Import>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+        <Literal>Anahita Pakiman</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">20230509</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
+        <Literal>GAE-vehicle-safety</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">101</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="AdultOccupantProtection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Category"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="ChildOccupantProtection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="Regulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Arcitecture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Attribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Barrier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Change"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Connection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Design"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Element"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FiniteElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Group"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Impactor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineLearning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Node"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResultPage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Safety"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SafetyAssist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpperBody"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VulnerableRoadUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Behavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/Weld"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/#CommonNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/#RigidBodyElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/#Semantic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="/#Simulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="FEModel/#Part"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="DefinedAs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="RatingOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="hasVehicle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/ArributeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/CausedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/ChangedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/ConnectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/GroupBehaviorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/GroupDesignOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/GroupFeatureOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasBarrier"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasChangeType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasEnergyPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasImpactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasModel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasPlatform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/HasUpperBody"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/InPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/OutputElementOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/OutputNodeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/PartBehaviorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/PartDesignOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/ProtocolOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/ProtocolYear"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/SameAs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/SemanticOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/SimilarityTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/SimulationResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="/StatusOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        <Class IRI="Regulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="AdultOccupantProtection"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Category"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="ChildOccupantProtection"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="Regulation"/>
+        <Class IRI="#Safety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Arcitecture"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Attribute"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Barrier"/>
+        <Class IRI="#Safety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Change"/>
+        <Class IRI="#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Connection"/>
+        <Class IRI="FEModel/#Part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Design"/>
+        <Class IRI="#MachineLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Element"/>
+        <Class IRI="#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FiniteElement"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Group"/>
+        <Class IRI="#MachineLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Impactor"/>
+        <Class IRI="#Safety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineLearning"/>
+        <Class IRI="#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Model"/>
+        <Class IRI="#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Node"/>
+        <Class IRI="#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Platform"/>
+        <Class IRI="#Arcitecture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResultPage"/>
+        <Class IRI="Regulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Safety"/>
+        <Class IRI="#Attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SafetyAssist"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpperBody"/>
+        <Class IRI="#Arcitecture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VulnerableRoadUser"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Behavior"/>
+        <Class IRI="#MachineLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/Weld"/>
+        <Class IRI="#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/#CommonNode"/>
+        <Class IRI="#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/#RigidBodyElement"/>
+        <Class IRI="#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/#Semantic"/>
+        <Class IRI="FEModel/#Part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="/#Simulation"/>
+        <Class IRI="#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="FEModel/#Part"/>
+        <Class IRI="#Model"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+        <ObjectProperty IRI="/ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="DefinedAs"/>
+        <ObjectProperty IRI="/ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="RatingOf"/>
+        <ObjectProperty IRI="/ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/CausedTo"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/ChangedTo"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/ConnectedBy"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/GroupBehaviorOf"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/GroupDesignOf"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/GroupFeatureOf"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/HasBarrier"/>
+        <ObjectProperty IRI="/SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/HasChangeType"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/HasEnergyPart"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/HasImpactor"/>
+        <ObjectProperty IRI="/SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/HasModel"/>
+        <ObjectProperty IRI="/SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/HasPart"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/HasReference"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/InPart"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/OutputElementOf"/>
+        <ObjectProperty IRI="/SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/OutputNodeOf"/>
+        <ObjectProperty IRI="/SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/PartBehaviorOf"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/PartDesignOf"/>
+        <ObjectProperty IRI="/MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/ProtocolOf"/>
+        <ObjectProperty IRI="/ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/ProtocolYear"/>
+        <ObjectProperty IRI="/ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/SameAs"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/SemanticOf"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/SimilarityTo"/>
+        <ObjectProperty IRI="/SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/SimulationResult"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="/StatusOf"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectProperty IRI="/ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="DefinedAs"/>
+            <Class IRI="AdultOccupantProtection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="DefinedAs"/>
+            <Class IRI="ChildOccupantProtection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="DefinedAs"/>
+            <Class IRI="#SafetyAssist"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="DefinedAs"/>
+            <Class IRI="#VulnerableRoadUser"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="RatingOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="RatingOf"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="hasVehicle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasVehicle"/>
+            <Class IRI="Category"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/ArributeOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ArributeOf"/>
+            <Class IRI="#Attribute"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/CausedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/CausedTo"/>
+            <Class IRI="#Change"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/ChangedTo"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/ChangedTo"/>
+            <ObjectUnionOf>
+                <Class IRI="#Connection"/>
+                <Class IRI="/Weld"/>
+                <Class IRI="/#CommonNode"/>
+                <Class IRI="/#RigidBodyElement"/>
+                <Class IRI="FEModel/#Part"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ConnectedBy"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/GroupBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/GroupBehaviorOf"/>
+            <Class IRI="/Behavior"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/GroupDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/GroupDesignOf"/>
+            <Class IRI="#Design"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/GroupFeatureOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/GroupFeatureOf"/>
+            <Class IRI="#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasBarrier"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasBarrier"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasChangeType"/>
+            <Class IRI="#Connection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasChangeType"/>
+            <Class IRI="/Weld"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasChangeType"/>
+            <Class IRI="/#CommonNode"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasChangeType"/>
+            <Class IRI="/#RigidBodyElement"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasChangeType"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasEnergyPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/SimilarityTo"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/HasFiniteElmentModel"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasImpactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasImpactor"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasModel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/HasModel"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasPart"/>
+            <Class IRI="#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasPlatform"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasPlatform"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasReference"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/HasReference"/>
+            <Class IRI="#Model"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/HasUpperBody"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/HasUpperBody"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/InPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/InPart"/>
+            <Class IRI="#Element"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/InPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/InPart"/>
+            <Class IRI="#Node"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/OutputElementOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/OutputElementOf"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/OutputNodeOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/OutputNodeOf"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/PartBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/PartBehaviorOf"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/PartDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/PartDesignOf"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/ProtocolOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ProtocolOf"/>
+            <Class IRI="#Attribute"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/ProtocolYear"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ProtocolYear"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/SameAs"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/SameAs"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/SemanticOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/SemanticOf"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/SimilarityTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/SimilarityTo"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="/StatusOf"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/StatusOf"/>
+            <Class IRI="#Model"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="#Barrier"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="#Element"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="#Impactor"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="#Node"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+            <Class IRI="#ResultPage"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="DefinedAs"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="RatingOf"/>
+            <Class IRI="AdultOccupantProtection"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="RatingOf"/>
+            <Class IRI="ChildOccupantProtection"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="RatingOf"/>
+            <Class IRI="#SafetyAssist"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="RatingOf"/>
+            <Class IRI="#VulnerableRoadUser"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="hasVehicle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="hasVehicle"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ArributeOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ArributeOf"/>
+            <Class IRI="#Model"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/CausedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/CausedTo"/>
+            <Class IRI="#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ChangedTo"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/ChangedTo"/>
+            <ObjectUnionOf>
+                <Class IRI="#Connection"/>
+                <Class IRI="/Weld"/>
+                <Class IRI="/#CommonNode"/>
+                <Class IRI="/#RigidBodyElement"/>
+                <Class IRI="FEModel/#Part"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ConnectedBy"/>
+            <Class IRI="#Connection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ConnectedBy"/>
+            <Class IRI="/Weld"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ConnectedBy"/>
+            <Class IRI="/#CommonNode"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ConnectedBy"/>
+            <Class IRI="/#RigidBodyElement"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/GroupBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/GroupBehaviorOf"/>
+            <Class IRI="#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/GroupDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/GroupDesignOf"/>
+            <Class IRI="#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/GroupFeatureOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/GroupFeatureOf"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasBarrier"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasBarrier"/>
+            <Class IRI="#Barrier"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasChangeType"/>
+            <Class IRI="#Change"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasEnergyPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/SimilarityTo"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasFiniteElmentModel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasFiniteElmentModel"/>
+            <Class IRI="#Model"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasImpactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasImpactor"/>
+            <Class IRI="#Impactor"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasModel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/HasModel"/>
+            <Class IRI="#Model"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasPart"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasPlatform"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/HasPlatform"/>
+            <Class IRI="#Platform"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasReference"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/HasReference"/>
+            <Class IRI="#Model"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/HasUpperBody"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/HasUpperBody"/>
+            <Class IRI="#UpperBody"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/InPart"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/InPart"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/OutputElementOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/OutputElementOf"/>
+            <Class IRI="#Element"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/OutputNodeOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="/OutputNodeOf"/>
+            <Class IRI="#Node"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/PartBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/PartBehaviorOf"/>
+            <Class IRI="/Behavior"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/PartDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/PartDesignOf"/>
+            <Class IRI="#Design"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ProtocolOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/ProtocolOf"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/ProtocolYear"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/ProtocolYear"/>
+            <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/SameAs"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/SameAs"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/SemanticOf"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/SemanticOf"/>
+            <Class IRI="/#Semantic"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/SimilarityTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="/SimilarityTo"/>
+            <Class IRI="/#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="/StatusOf"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="/StatusOf"/>
+            <Class IRI="#Model"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+            <Class IRI="FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+            <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <ObjectIntersectionOf>
+                <Class IRI="#Model"/>
+                <ObjectUnionOf>
+                    <Class IRI="#Platform"/>
+                    <Class IRI="#UpperBody"/>
+                </ObjectUnionOf>
+            </ObjectIntersectionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
