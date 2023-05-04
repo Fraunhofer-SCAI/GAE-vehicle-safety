@@ -14,10 +14,6 @@
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
     <Import>http://purl.org/dc/elements/1.1/</Import>
     <Annotation>
-        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
-        <Literal>Anahita Pakiman</Literal>
-    </Annotation>
-    <Annotation>
         <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
         <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">20230509</Literal>
     </Annotation>
