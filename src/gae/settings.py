@@ -32,6 +32,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # internal added app
+    'load_data',
+    # external added app
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'django_neomodel',
+    'django_extensions',
+    # default
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -126,7 +133,7 @@ STATIC_URL = '/static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-## GAE seeting, 
+# GAE seeting,
 # aviod sharing important credentials on the github
 
 ECRET_KEY = config('SECRET_KEY')

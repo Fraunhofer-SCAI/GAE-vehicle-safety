@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>MCompare</title>
+  </head>
+  <body>
+    <h1>Run Tree</h1>
+    <table>
+      <tr>
+        <th>Simulaiton Name</th>
+        <th>Reference</th>
+        <th>Child</th>
+      </tr>
+    {% for sim in sim_list %}
+     <tr>
+       <td>{{ sim.sim_name }}</td>
+       <td>{{ sim.get_reference.0 }}</td>
+       <td>{{ sim.get_child }}</td>
+     </tr>
+    {% endfor %}
+    </table>
+  </body>
+</html>
