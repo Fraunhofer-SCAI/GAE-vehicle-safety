@@ -1,0 +1,4 @@
+martor
+gunicorn
+django
+python-decouple

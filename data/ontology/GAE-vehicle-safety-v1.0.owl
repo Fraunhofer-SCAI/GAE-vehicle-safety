@@ -1,0 +1,1796 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="https://caewebvis.scai.fraunhofer.de/gae/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="https://caewebvis.scai.fraunhofer.de/gae/">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/contributor"/>
+        <Literal>Prof. Dr. Jochen Garcke</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+        <Literal>Anahita Pakiman</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2023-05-09</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/rights"/>
+        <Literal>This ontology is distributed under a Creative Commons Attribution 4.0 International (CC BY 4.0) - https://creativecommons.org/licenses/by/4.0/</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
+        <Literal>GAE-vehicle-safety</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>In the automotive industry a significant amount of the research and development (R&amp;D) data stems from computer-aided engineering (CAE) in several disciplines. Introducing semantics for this domain improves the accessibility of the data and, in particular, will contribute to the cross-functional use of the data. In this work, we provide  an organized schema that incorporates information from various structured and unstructured data sources, taking care to include relevant concepts within the domain. The present work originates from the vehicle safety R&amp;D process, which includes computer-aided design, CAE, and safety attributes from vehicle performance assessment programs. In particular, we propose semantics that enable searchability, filtering, recommendation, and prediction for crash CAE data during the automotive R&amp;D process for vehicle safety. Furthermore, the data modelling enables multidisciplinary problem-solving with respect to other aspects of vehicle development, and outline the use of the ontology for R&amp;D on the combination of passive and active safety in the future. We describe previous efforts in comparison to our proposal, discuss its strengths and limitations, and identify areas for future work.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#decimal">1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/Category"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Change"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Design"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Platform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Behavior"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Semantic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/contributor"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/publisher"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/rights"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:date"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/Category"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Change"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Design"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+        <Class IRI="http://schema.org/Vehicle"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Platform"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/Regulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Safety"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser"/>
+        <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Behavior"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Semantic"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+    </SubClassOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//MachinLearningOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimulationResult"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/Category"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Change"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+            <ObjectUnionOf>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Behavior"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Design"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Attribute"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://dbpedia.org/ontology/linkedTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/DefinedAs"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/RatingOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser"/>
+        </ObjectMaxCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE/hasVehicle"/>
+            <Class IRI="http://schema.org/Vehicle"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ArributeOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//CausedTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ChangedTo"/>
+            <ObjectUnionOf>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Connection"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Weld"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#CommonNode"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ConnectedBy"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#RigidBodyElement"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupBehaviorOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupDesignOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Group"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//GroupFeatureOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasBarrier"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Barrier"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasChangeType"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Change"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasEnergyPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasFiniteElmentModel"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasImpactor"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Impactor"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasModel"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPart"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasPlatform"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Platform"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasReference"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//HasUpperBody"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//InPart"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputElementOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Element"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//OutputNodeOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Node"/>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartBehaviorOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//Behavior"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//PartDesignOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Design"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolOf"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//ProtocolYear"/>
+            <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SameAs"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SemanticOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Semantic"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//SimilarityTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE//#Simulation"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="https://caewebvis.scai.fraunhofer.de/GAE//StatusOf"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://ci.mines-stetienne.fr/seas/SystemOntology-1.1#connectedTo"/>
+            <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://dbpedia.org/ontology/productionStartYear"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+            <Class IRI="http://www.aktors.org/ontology/support#Year"/>
+        </ObjectExactCardinality>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <Class IRI="http://ontology.ethereal.cz/irao/#Protocol"/>
+        </ObjectSomeValuesFrom>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="https://projects.ics.forth.gr/isl/oae/specification/index.html#belongsTo"/>
+            <ObjectIntersectionOf>
+                <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Model"/>
+                <ObjectUnionOf>
+                    <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#Platform"/>
+                    <Class IRI="https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody"/>
+                </ObjectUnionOf>
+            </ObjectIntersectionOf>
+        </ObjectAllValuesFrom>
+    </ObjectPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://ontology.ethereal.cz/irao/#Protocol</IRI>
+        <Literal>The documents that specify the requirement for the safety test assessment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/modified"/>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">2012-06-14</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/publisher"/>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+        <IRI>http://purl.org/dc/aboutdcmi#DCMI</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/title"/>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+        <Literal xml:lang="en">Dublin Core Metadata Element Set, Version 1.1</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/contributor</IRI>
+        <Literal xml:lang="en">The guidelines for using names of persons or organizations as creators also apply to contributors.  Typically, the name of a Contributor should be used to indicate the entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/contributor</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/contributor</IRI>
+        <Literal xml:lang="en">An entity responsible for making contributions to the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/contributor</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/contributor</IRI>
+        <Literal xml:lang="en">Contributor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/contributor</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/contributor) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/coverage</IRI>
+        <Literal xml:lang="en">Spatial topic and spatial applicability may be a named place or a location specified by its geographic coordinates. Temporal topic may be a named period, date, or date range. A jurisdiction may be a named administrative entity or a geographic place to which the resource applies. Recommended practice is to use a controlled vocabulary such as the Getty Thesaurus of Geographic Names [[TGN](https://www.getty.edu/research/tools/vocabulary/tgn/index.html)]. Where appropriate, named places or time periods may be used in preference to numeric identifiers such as sets of coordinates or date ranges.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/coverage</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/coverage</IRI>
+        <Literal xml:lang="en">The spatial or temporal topic of the resource, spatial applicability of the resource, or jurisdiction under which the resource is relevant.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/coverage</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/coverage</IRI>
+        <Literal xml:lang="en">Coverage</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/coverage</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/coverage) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/creator</IRI>
+        <Literal xml:lang="en">Examples of a Creator include a person, an organization, or a service. Typically, the name of a Creator should be used to indicate the entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/creator</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/creator</IRI>
+        <Literal xml:lang="en">An entity primarily responsible for making the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/creator</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/creator</IRI>
+        <Literal xml:lang="en">Creator</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/creator</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/creator) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/date</IRI>
+        <Literal xml:lang="en">Date may be used to express temporal information at any level of granularity.  Recommended practice is to express the date, date/time, or period of time according to ISO 8601-1 [[ISO 8601-1](https://www.iso.org/iso-8601-date-and-time-format.html)] or a published profile of the ISO standard, such as the W3C Note on Date and Time Formats [[W3CDTF](https://www.w3.org/TR/NOTE-datetime)] or the Extended Date/Time Format Specification [[EDTF](http://www.loc.gov/standards/datetime/)].  If the full date is unknown, month and year (YYYY-MM) or just year (YYYY) may be used. Date ranges may be specified using ISO 8601 period of time specification in which start and end dates are separated by a &apos;/&apos; (slash) character.  Either the start or end date may be missing.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/date</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/date</IRI>
+        <Literal xml:lang="en">A point or period of time associated with an event in the lifecycle of the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/date</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/date</IRI>
+        <Literal xml:lang="en">Date</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/date</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/date) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/description</IRI>
+        <Literal xml:lang="en">Description may include but is not limited to: an abstract, a table of contents, a graphical representation, or a free-text account of the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/description</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/description</IRI>
+        <Literal xml:lang="en">An account of the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/description</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/description</IRI>
+        <Literal xml:lang="en">Description</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/description</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/description) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/format</IRI>
+        <Literal xml:lang="en">Recommended practice is to use a controlled vocabulary where available. For example, for file formats one could use the list of Internet Media Types [[MIME](https://www.iana.org/assignments/media-types/media-types.xhtml)].</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/format</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/format</IRI>
+        <Literal xml:lang="en">The file format, physical medium, or dimensions of the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/format</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/format</IRI>
+        <Literal xml:lang="en">Format</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/format</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/format) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/identifier</IRI>
+        <Literal xml:lang="en">Recommended practice is to identify the resource by means of a string conforming to an identification system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/identifier</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/identifier</IRI>
+        <Literal xml:lang="en">An unambiguous reference to the resource within a given context.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/identifier</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/identifier</IRI>
+        <Literal xml:lang="en">Identifier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/identifier</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/identifier) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/language</IRI>
+        <Literal xml:lang="en">Recommended practice is to use either a non-literal value representing a language from a controlled vocabulary such as ISO 639-2 or ISO 639-3, or a literal value consisting of an IETF Best Current Practice 47 [[IETF-BCP47](https://tools.ietf.org/html/bcp47)] language tag.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/language</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/language</IRI>
+        <Literal xml:lang="en">A language of the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/language</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/language</IRI>
+        <Literal xml:lang="en">Language</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/language</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/language) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/publisher</IRI>
+        <Literal xml:lang="en">Examples of a Publisher include a person, an organization, or a service. Typically, the name of a Publisher should be used to indicate the entity.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/publisher</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/publisher</IRI>
+        <Literal xml:lang="en">An entity responsible for making the resource available.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/publisher</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/publisher</IRI>
+        <Literal xml:lang="en">Publisher</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/publisher</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/publisher) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/relation</IRI>
+        <Literal xml:lang="en">Recommended practice is to identify the related resource by means of a URI. If this is not possible or feasible, a string conforming to a formal identification system may be provided.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/relation</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/relation</IRI>
+        <Literal xml:lang="en">A related resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/relation</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/relation</IRI>
+        <Literal xml:lang="en">Relation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/relation</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/relation) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/rights</IRI>
+        <Literal xml:lang="en">Typically, rights information includes a statement about various property rights associated with the resource, including intellectual property rights.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/rights</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/rights</IRI>
+        <Literal xml:lang="en">Information about rights held in and over the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/rights</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/rights</IRI>
+        <Literal xml:lang="en">Rights</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/rights</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/rights) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/source</IRI>
+        <Literal xml:lang="en">The described resource may be derived from the related resource in whole or in part. Recommended best practice is to identify the related resource by means of a string conforming to a formal identification system.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/source</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/source</IRI>
+        <Literal xml:lang="en">A related resource from which the described resource is derived.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/source</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/source</IRI>
+        <Literal xml:lang="en">Source</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/source</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/source) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/subject</IRI>
+        <Literal xml:lang="en">Typically, the subject will be represented using keywords, key phrases, or classification codes.  Recommended best practice is to use a controlled vocabulary.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/subject</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/subject</IRI>
+        <Literal xml:lang="en">The topic of the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/subject</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/subject</IRI>
+        <Literal xml:lang="en">Subject</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/subject</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/subject) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/title</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/title</IRI>
+        <Literal xml:lang="en">A name given to the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/title</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/title</IRI>
+        <Literal xml:lang="en">Title</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/title</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/title) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/description"/>
+        <IRI>http://purl.org/dc/elements/1.1/type</IRI>
+        <Literal xml:lang="en">Recommended practice is to use a controlled vocabulary such as the DCMI Type Vocabulary [[DCMI-TYPE](http://dublincore.org/documents/dcmi-type-vocabulary/)]. To describe the file format, physical medium, or dimensions of the resource, use the Format element.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://purl.org/dc/terms/issued"/>
+        <IRI>http://purl.org/dc/elements/1.1/type</IRI>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#date">1999-07-02</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://purl.org/dc/elements/1.1/type</IRI>
+        <Literal xml:lang="en">The nature or genre of the resource.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://purl.org/dc/elements/1.1/type</IRI>
+        <IRI>http://purl.org/dc/elements/1.1/</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://purl.org/dc/elements/1.1/type</IRI>
+        <Literal xml:lang="en">Type</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty IRI="http://www.w3.org/2004/02/skos/core#note"/>
+        <IRI>http://purl.org/dc/elements/1.1/type</IRI>
+        <Literal xml:lang="en">A [second property](/specifications/dublin-core/dcmi-terms/#http://purl.org/dc/terms/type) with the same name as this property has been declared in the [dcterms: namespace](http://purl.org/dc/terms/).  See the Introduction to the document [DCMI Metadata Terms](/specifications/dublin-core/dcmi-terms/) for an explanation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://schema.org/Vehicle</IRI>
+        <Literal>https://schema.org/Vehicle
+A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.aktors.org/ontology/support#Year</IRI>
+        <Literal>An Entity of Type: Property, from Named Graph: http://dbpedia.org/resource/classes#, within Data Space: dbpedia.org</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/AdultOccupantProtection</IRI>
+        <Literal>summary of the vehicle performance in adult occupant protection.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/Category</IRI>
+        <Literal>Vehicle class, which is defined to classify vehicles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/ChildOccupantProtection</IRI>
+        <Literal>summary of the vehicle performance in child occupant protection.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/Regulation</IRI>
+        <Literal>Associations that define the safety assessment regulations, e.g.EuroNCAP.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Arcitecture</IRI>
+        <Literal>Referring to the vehicle architecture, that is a way of vehicle development to be more efficent. . A vehicle is typically divided into the so-called platform and upper body. Using this approach, a company can develop a set of differentiated products more efficently. For simultaneous developments, what deviates between the vehicles, e.g. sedan versus minivan, is the upper body.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Attribute</IRI>
+        <Literal>It is common to share the FE-model between different disciplines during vehicle development. This class clarifydifferent solid mechanics CAE domains , safety and durability,  with corresponding semantics for the requirements and the output quantities to assess the simulation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Barrier</IRI>
+        <Literal>The FE-model of a barrier for safety analysis, e.g. pole, rigid wall, moving barrier.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Change</IRI>
+        <Literal>A change applied from FE-model one FE model to the next</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Connection</IRI>
+        <Literal>Different FE model entities to model connections in the model, e.g. rigid body elements (RBE), common nodes and welds.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Design</IRI>
+        <Literal>Introduced class to connect parts of FE-models based on similarity of the input data.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Element</IRI>
+        <Literal>FE model or FE simulation element e.g. shell element, solid element.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#FiniteElement</IRI>
+        <Literal>Finite element analyses performed for product development, e.g. full frontal crash, pedestrian crash, noise vibration and harshness (NVH).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Group</IRI>
+        <Literal>Grouping the parts and their feature to be analysed for a desired functionality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Impactor</IRI>
+        <Literal>The FE-model of an impactor that hit several positions of a vehicle in several simulations, e.g. head and lower leg.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#MachineLearning</IRI>
+        <Literal>Machine learning methods implemented on the FE data (input model and output simulations).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Model</IRI>
+        <Literal>FE-model of the vehicle disregarding the load-case.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Node</IRI>
+        <Literal>FE model or FE simulation nodes belonging to different element types.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Platform</IRI>
+        <Literal>One broad definition of a platform is a relatively large set of product components that are physically connected as a stable subassembly and are common for different final vehicles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#ResultPage</IRI>
+        <Literal>Performance of the vehicle on the market.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#Safety</IRI>
+        <Literal>safety requirement and analysises that should be fullfilled during the design processes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#SafetyAssist</IRI>
+        <Literal>summary of the vehicle performance in safety assitance devices.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#UpperBody</IRI>
+        <Literal>The parts of the vehicle that is not included in the platform and  deviates between the vehicles in simultaneous developments, e.g. sedan versus a minivan.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/#VulnerableRoadUser</IRI>
+        <Literal>Summary of vehicle performance for vulnerable road users, e.g. pedestrians (head, lower leg) and cyclists.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE//Behavior</IRI>
+        <Literal>Bucketing the FE-simulation output features.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE//#Semantic</IRI>
+        <Literal>Parts container that enables capturing the case of a part split in comparing FE models.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE//#Simulation</IRI>
+        <Literal>An FE-model simulation output that includes a vehicle and the load-case, e.g, for safety analysis a barrier or an impactor.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>https://caewebvis.scai.fraunhofer.de/GAE/FEModel/#Part</IRI>
+        <Literal>The main entities representing an FE model and simulation that includes nodes and elements.</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi -->
+
