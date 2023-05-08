@@ -2,3 +2,5 @@ martor
 gunicorn
 django
 python-decouple
+numpy
+neomodel
