@@ -4,3 +4,10 @@ django
 python-decouple
 numpy
 neomodel
+django_neomodel
+sphinx
+sphinx_rtd_theme
+recommonmark
+nbsphinx
+recommonmark
+sphinx-mdinclude

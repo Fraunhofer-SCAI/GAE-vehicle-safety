@@ -35,9 +35,7 @@ INSTALLED_APPS = [
     # internal added app
     'load_data',
     # external added app
-    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'django_neomodel',
-    'django_extensions',
     # default
     'django.contrib.admin',
     'django.contrib.auth',

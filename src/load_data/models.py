@@ -55,8 +55,7 @@ class Fts(neomodel.StructuredRel):
 
 class Sim(neomodel.StructuredNode):
 
-    '''
-    the simulation nodes that hold the global features of the simulation e.g. 
+    """the simulation nodes that hold the global features of the simulation e.g. 
     total energy 
 
     # Generic properties
@@ -64,8 +63,7 @@ class Sim(neomodel.StructuredNode):
         uid                 the unique id for simulaiton
         sim_name            simulation name should be a unique property
         sim_oem             to which car factory the result belongs to
-        sim_abb             simulation name abbreviation, for better  
-                            visualization of the name
+        sim_abb             simulation name abbreviation, for better visualization of the name
         sim_lc              load case of the analysis e.g pedestrian head impact
         sim_rel             the development stage (release) of the product
         sim_dspln           the analysis discipline e.g. safety, durability
@@ -73,13 +71,11 @@ class Sim(neomodel.StructuredNode):
         sim_path_pre        path to the file for input simulation data
         sim_path_post       path to the file for output simulation data
 
-
     # Crash-specific properties
     # Energy features, initial time(t_i), absorption end time (t_n)
 
         sim_ie_tot_max      max of the total internal energy of the simulation    
-        sim_ie_prt_max      max of the internal energy of the parts in a 
-                            simulation
+        sim_ie_prt_max      max of the internal energy of the parts in a simulation
         sim_ke_tot_max      max of the total kinetic energy of the simulation 
         sim_ie_ti_ll        simulation t_i with the lower limit method (ll)                        
         sim_ie_ti_grad      simulation t_i with the gradient method (grad)
@@ -92,8 +88,9 @@ class Sim(neomodel.StructuredNode):
         sim_t_max           max of t_n
 
 
-
-    '''
+    Returns:
+        boolean: None
+    """
 
     uid = neomodel.UniqueIdProperty()
     sim_name = neomodel.StringProperty(unique_index=True)
@@ -323,10 +320,29 @@ class Sim(neomodel.StructuredNode):
 
 
 class Part(neomodel.StructuredNode):
-    '''
-    the part nodes. The main data from simulations are stored in this node 
+    """The part nodes. The main data from simulations are stored in this node 
     and later modelled on the remaining introduces semantics, e.g. edge weights.
-    '''
+
+    # Generic properties
+
+        :parameter uid:           the unique id for simulaiton
+        :parameter part_id:       the identification number of part in the 
+                                  simulation
+        :parameter part_name:     the name of the part from the simulation
+        :parameter part_sim_name: the simulation name of the part
+        :parameter part_sim_abb:  the simulation abbreviation name 
+
+    # Part as a box
+        part_cog            the centre of the part if located in a box, x, y, z
+        part_min            the min x,y,z of the box holding the part
+        part_max            the max x,y,z of the box holding the part
+
+
+    Args:
+        neomodel (neomodel.StructuredNode)
+
+    Returns:
+        boolean: None"""
 
     uid = neomodel.UniqueIdProperty()
     part_id = neomodel.IntegerProperty()
@@ -338,15 +354,6 @@ class Part(neomodel.StructuredNode):
     part_min = neomodel.ArrayProperty()
     part_max = neomodel.ArrayProperty()
 
-    # ------------------------------------------
-    # should move to Mthd node and Fts edge
-    nrg_max = neomodel.FloatProperty()
-    ti_ll = neomodel.FloatProperty()
-    ti_grad = neomodel.FloatProperty()
-    tn_pct = neomodel.FloatProperty()
-    tn_max = neomodel.FloatProperty()
-    # ------------------------------------------
-
     part_des = neomodel.Relationship('Des', 'PART_DES', model=WgtRel)
     part_behav = neomodel.Relationship('Behav', 'PART_BEHAV')
     Ipart_pltf = neomodel.Relationship('Pltf', 'BELONGS_TO')
@@ -354,12 +361,15 @@ class Part(neomodel.StructuredNode):
     part_fts = neomodel.Relationship('Mthd', 'PART_FTS', model=Fts)
 
     def part_nrg(self, fts):
+        '''
+        Returning the specified energy feature of a part.
+        '''
 
         cypherTxt = '''
-        match (p:Part)
-        where p.uid='{0}'
-        return p.{1}
-        order by p.{1} desc
+            match (p:Part)
+            where p.uid='{0}'
+            return p.{1}
+            order by p.{1} desc
         '''.format(self.uid, fts)
 
         a = self.cypher(cypherTxt)
@@ -714,3 +724,12 @@ class Mthd(neomodel.StructuredNode):
     mthd_cnfg_keys = neomodel.ArrayProperty()
     mthd_cnfg_vals = neomodel.ArrayProperty()
     mthd_keys = neomodel.ArrayProperty()
+
+    # ------------------------------------------
+    # should implement from part to Mthd node and Fts edge
+    # nrg_max = neomodel.FloatProperty()
+    # ti_ll = neomodel.FloatProperty()
+    # ti_grad = neomodel.FloatProperty()
+    # tn_pct = neomodel.FloatProperty()
+    # tn_max = neomodel.FloatProperty()
+    # ------------------------------------------
