@@ -26,6 +26,7 @@ note_scripts/LSDYNA_script/
 **/RELEASE*.txt
 **/*.diff
 **/.history
+**/_build
 
 
 
