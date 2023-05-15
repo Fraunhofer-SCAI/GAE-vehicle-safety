@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>load_data package &mdash; GAE-vehicle-safety 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="load_data.migrations package" href="load_data.migrations.html" />
+    <link rel="prev" title="gae package" href="gae.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GAE-vehicle-safety
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Django Project</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="gae.html">gae package</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">load_data package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="load_data.migrations.html">load_data.migrations package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-load_data.admin">load_data.admin module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-load_data.apps">load_data.apps module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.apps.LoadDataConfig"><code class="docutils literal notranslate"><span class="pre">LoadDataConfig</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-load_data.models">load_data.models module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Attr"><code class="docutils literal notranslate"><span class="pre">Attr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Barr"><code class="docutils literal notranslate"><span class="pre">Barr</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Behav"><code class="docutils literal notranslate"><span class="pre">Behav</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Des"><code class="docutils literal notranslate"><span class="pre">Des</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Elmnt"><code class="docutils literal notranslate"><span class="pre">Elmnt</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Fts"><code class="docutils literal notranslate"><span class="pre">Fts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Grp"><code class="docutils literal notranslate"><span class="pre">Grp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.GrpFts"><code class="docutils literal notranslate"><span class="pre">GrpFts</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Imp"><code class="docutils literal notranslate"><span class="pre">Imp</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Model"><code class="docutils literal notranslate"><span class="pre">Model</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Mthd"><code class="docutils literal notranslate"><span class="pre">Mthd</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Node"><code class="docutils literal notranslate"><span class="pre">Node</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Part"><code class="docutils literal notranslate"><span class="pre">Part</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Pltf"><code class="docutils literal notranslate"><span class="pre">Pltf</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Prtcl"><code class="docutils literal notranslate"><span class="pre">Prtcl</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Sim"><code class="docutils literal notranslate"><span class="pre">Sim</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Ubdy"><code class="docutils literal notranslate"><span class="pre">Ubdy</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.Veh"><code class="docutils literal notranslate"><span class="pre">Veh</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.models.WgtRel"><code class="docutils literal notranslate"><span class="pre">WgtRel</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-load_data.tests">load_data.tests module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-load_data.urls">load_data.urls module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-load_data.views">load_data.views module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#load_data.views.IndexView"><code class="docutils literal notranslate"><span class="pre">IndexView</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="manage.html">manage module</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Others</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="README.html">SPHINX guide</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">GAE-vehicle-safety</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Django Project</a></li>
+      <li class="breadcrumb-item active">load_data package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/load_data.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-load_data">
+<span id="load-data-package"></span><h1>load_data package<a class="headerlink" href="#module-load_data" title="Permalink to this heading"></a></h1>
+<section id="subpackages">
+<h2>Subpackages<a class="headerlink" href="#subpackages" title="Permalink to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="load_data.migrations.html">load_data.migrations package</a></li>
+</ul>
+</div>
+</section>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-load_data.admin">
+<span id="load-data-admin-module"></span><h2>load_data.admin module<a class="headerlink" href="#module-load_data.admin" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-load_data.apps">
+<span id="load-data-apps-module"></span><h2>load_data.apps module<a class="headerlink" href="#module-load_data.apps" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.apps.LoadDataConfig">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.apps.</span></span><span class="sig-name descname"><span class="pre">LoadDataConfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">app_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">app_module</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.apps.LoadDataConfig" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">AppConfig</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.apps.LoadDataConfig.default_auto_field">
+<span class="sig-name descname"><span class="pre">default_auto_field</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'django.db.models.BigAutoField'</span></em><a class="headerlink" href="#load_data.apps.LoadDataConfig.default_auto_field" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.apps.LoadDataConfig.name">
+<span class="sig-name descname"><span class="pre">name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'load_data'</span></em><a class="headerlink" href="#load_data.apps.LoadDataConfig.name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-load_data.models">
+<span id="load-data-models-module"></span><h2>load_data.models module<a class="headerlink" href="#module-load_data.models" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Attr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Attr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Attr" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Attr.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Attr.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">AttrDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Attr.attr_name">
+<span class="sig-name descname"><span class="pre">attr_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Attr.attr_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Attr.attr_prtcl">
+<span class="sig-name descname"><span class="pre">attr_prtcl</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Attr.attr_prtcl" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Attr.attr_spec">
+<span class="sig-name descname"><span class="pre">attr_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.JSONProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Attr.attr_spec" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Attr.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Attr.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Barr">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Barr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Barr" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Barr.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Barr.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">BarrDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Barr.barr_id">
+<span class="sig-name descname"><span class="pre">barr_id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.IntegerProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Barr.barr_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Barr.barr_name">
+<span class="sig-name descname"><span class="pre">barr_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Barr.barr_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Barr.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Barr.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Behav">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Behav</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Behav" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Behav.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Behav.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">BehavDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Behav.behav_embd">
+<span class="sig-name descname"><span class="pre">behav_embd</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Behav.behav_embd" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Behav.behav_id">
+<span class="sig-name descname"><span class="pre">behav_id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Behav.behav_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Behav.behav_method">
+<span class="sig-name descname"><span class="pre">behav_method</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Behav.behav_method" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Behav.behav_type">
+<span class="sig-name descname"><span class="pre">behav_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Behav.behav_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Behav.get_sims">
+<span class="sig-name descname"><span class="pre">get_sims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Behav.get_sims" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Behav.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Behav.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Des">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Des</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Des" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Des.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Des.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">DesDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Des.des_pid">
+<span class="sig-name descname"><span class="pre">des_pid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.IntegerProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Des.des_pid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Des.des_type">
+<span class="sig-name descname"><span class="pre">des_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Des.des_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Des.get_behav">
+<span class="sig-name descname"><span class="pre">get_behav</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Des.get_behav" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Des.get_byType">
+<span class="sig-name descname"><span class="pre">get_byType</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Des.get_byType" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Des.get_part_nrg">
+<span class="sig-name descname"><span class="pre">get_part_nrg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ft</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Des.get_part_nrg" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Des.get_sims">
+<span class="sig-name descname"><span class="pre">get_sims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Des.get_sims" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Des.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Des.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Elmnt">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Elmnt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Elmnt" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Elmnt.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ElmntDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.elmnt_id">
+<span class="sig-name descname"><span class="pre">elmnt_id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.IntegerProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Elmnt.elmnt_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.elmnt_max_disp_xyz">
+<span class="sig-name descname"><span class="pre">elmnt_max_disp_xyz</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Elmnt.elmnt_max_disp_xyz" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.elmnt_name">
+<span class="sig-name descname"><span class="pre">elmnt_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Elmnt.elmnt_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.elmnt_part">
+<span class="sig-name descname"><span class="pre">elmnt_part</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Elmnt.elmnt_part" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.elmnt_type">
+<span class="sig-name descname"><span class="pre">elmnt_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Elmnt.elmnt_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.elmnt_xyz">
+<span class="sig-name descname"><span class="pre">elmnt_xyz</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Elmnt.elmnt_xyz" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Elmnt.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Elmnt.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Fts">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Fts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Fts" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredRel</span></code></p>
+<p>features value for an FE entity connected to its method
+that the keys are in the Ftsthe _e_ in naming is
+referring to the edge property</p>
+<blockquote>
+<div><dl class="simple">
+<dt>value   list of values, the keys are in the target</dt><dd><p>node, Mthd</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Fts.value">
+<span class="sig-name descname"><span class="pre">value</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Fts.value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Grp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Grp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Grp" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Grp.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Grp.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">GrpDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Grp.grp_cog">
+<span class="sig-name descname"><span class="pre">grp_cog</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Grp.grp_cog" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Grp.grp_part">
+<span class="sig-name descname"><span class="pre">grp_part</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Grp.grp_part" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Grp.grp_rng">
+<span class="sig-name descname"><span class="pre">grp_rng</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Grp.grp_rng" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Grp.grp_sim">
+<span class="sig-name descname"><span class="pre">grp_sim</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Grp.grp_sim" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Grp.grp_type">
+<span class="sig-name descname"><span class="pre">grp_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Grp.grp_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Grp.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Grp.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.GrpFts">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">GrpFts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.GrpFts" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredRel</span></code></p>
+<p>contain the properties of the grouped parts
+related to the simulation, the _e_ in naming is
+referring to the edge property</p>
+<blockquote>
+<div><dl class="simple">
+<dt>type    describes the method</dt><dd><p>box_mrg</p>
+</dd>
+<dt>key     list of names of the variable</dt><dd><p>nrg_max</p>
+</dd>
+</dl>
+<p>value   list of values</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.GrpFts.grp_e_key">
+<span class="sig-name descname"><span class="pre">grp_e_key</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.GrpFts.grp_e_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.GrpFts.grp_e_type">
+<span class="sig-name descname"><span class="pre">grp_e_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.GrpFts.grp_e_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.GrpFts.grp_e_value">
+<span class="sig-name descname"><span class="pre">grp_e_value</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.GrpFts.grp_e_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Imp">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Imp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Imp" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Imp.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ImpDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_angle">
+<span class="sig-name descname"><span class="pre">imp_angle</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_angle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_angle_unit">
+<span class="sig-name descname"><span class="pre">imp_angle_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_angle_unit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_discipline">
+<span class="sig-name descname"><span class="pre">imp_discipline</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_discipline" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_loadcase">
+<span class="sig-name descname"><span class="pre">imp_loadcase</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_loadcase" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_name">
+<span class="sig-name descname"><span class="pre">imp_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_test_code">
+<span class="sig-name descname"><span class="pre">imp_test_code</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_test_code" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_velocity">
+<span class="sig-name descname"><span class="pre">imp_velocity</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_velocity" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.imp_velocity_unit">
+<span class="sig-name descname"><span class="pre">imp_velocity_unit</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.imp_velocity_unit" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Imp.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Imp.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Model">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Model</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Model" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Model.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Model.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">ModelDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Model.get_baseStatusModel">
+<span class="sig-name descname"><span class="pre">get_baseStatusModel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Model.get_baseStatusModel" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Model.get_base_sims">
+<span class="sig-name descname"><span class="pre">get_base_sims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Model.get_base_sims" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Model.get_media">
+<span class="sig-name descname"><span class="pre">get_media</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Model.get_media" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Model.get_sims">
+<span class="sig-name descname"><span class="pre">get_sims</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Model.get_sims" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Model.model_attr">
+<span class="sig-name descname"><span class="pre">model_attr</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Model.model_attr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Model.model_base_status">
+<span class="sig-name descname"><span class="pre">model_base_status</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Model.model_base_status" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Model.model_name">
+<span class="sig-name descname"><span class="pre">model_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Model.model_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Model.model_ref">
+<span class="sig-name descname"><span class="pre">model_ref</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Model.model_ref" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Model.model_veh">
+<span class="sig-name descname"><span class="pre">model_veh</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Model.model_veh" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Model.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Model.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Mthd">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Mthd</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Mthd" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<p>contain the properties of the method for feature extraction
+that can be connected to part, node and element. that reduces their
+properties in time to some features.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>name          the method name</dt><dd><p>e.g. nrg_parts, nrg_parts_grid</p>
+</dd>
+<dt>cnfg_key      list of name of the configuration variable</dt><dd><p>e.g. n_grid, nrg_pctMax</p>
+</dd>
+</dl>
+<p>cnfg_value    list of configuration values</p>
+<p>fts_keys      list of names of features that are linked to this node</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Mthd.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Mthd.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">MthdDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Mthd.mthd_cnfg_keys">
+<span class="sig-name descname"><span class="pre">mthd_cnfg_keys</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Mthd.mthd_cnfg_keys" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Mthd.mthd_cnfg_vals">
+<span class="sig-name descname"><span class="pre">mthd_cnfg_vals</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Mthd.mthd_cnfg_vals" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Mthd.mthd_keys">
+<span class="sig-name descname"><span class="pre">mthd_keys</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Mthd.mthd_keys" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Mthd.mthd_name">
+<span class="sig-name descname"><span class="pre">mthd_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Mthd.mthd_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Mthd.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Mthd.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Node">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Node</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Node" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Node.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">NodeDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.node_id">
+<span class="sig-name descname"><span class="pre">node_id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.IntegerProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Node.node_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.node_max_disp_xyz">
+<span class="sig-name descname"><span class="pre">node_max_disp_xyz</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Node.node_max_disp_xyz" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.node_name">
+<span class="sig-name descname"><span class="pre">node_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Node.node_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.node_part">
+<span class="sig-name descname"><span class="pre">node_part</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Node.node_part" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.node_type">
+<span class="sig-name descname"><span class="pre">node_type</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Node.node_type" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.node_xyz">
+<span class="sig-name descname"><span class="pre">node_xyz</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Node.node_xyz" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Node.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Node.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Part">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Part</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Part" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<p>The part nodes. The main data from simulations are stored in this node
+and later modelled on the remaining introduces semantics, e.g. edge weights.</p>
+<p># Generic properties</p>
+<blockquote>
+<div><dl class="field-list simple">
+<dt class="field-odd">parameter uid<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the unique id for simulaiton</p>
+</dd>
+<dt class="field-even">parameter part_id<span class="colon">:</span></dt>
+<dd class="field-even"><p>the identification number of part in the
+simulation</p>
+</dd>
+<dt class="field-odd">parameter part_name<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the name of the part from the simulation</p>
+</dd>
+<dt class="field-even">parameter part_sim_name<span class="colon">:</span></dt>
+<dd class="field-even"><p>the simulation name of the part</p>
+</dd>
+<dt class="field-odd">parameter part_sim_abb<span class="colon">:</span></dt>
+<dd class="field-odd"><p>the simulation abbreviation name</p>
+</dd>
+</dl>
+</div></blockquote>
+<dl class="simple">
+<dt># Part as a box</dt><dd><p>part_cog            the centre of the part if located in a box, x, y, z
+part_min            the min x,y,z of the box holding the part
+part_max            the max x,y,z of the box holding the part</p>
+</dd>
+</dl>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>neomodel</strong> (<em>neomodel.StructuredNode</em>) – </p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Part.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">PartDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.Ipart_pltf">
+<span class="sig-name descname"><span class="pre">Ipart_pltf</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.Ipart_pltf" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Part.get_des">
+<span class="sig-name descname"><span class="pre">get_des</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">typ</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Part.get_des" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Part.get_sim">
+<span class="sig-name descname"><span class="pre">get_sim</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Part.get_sim" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Part.get_sim_name">
+<span class="sig-name descname"><span class="pre">get_sim_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Part.get_sim_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_behav">
+<span class="sig-name descname"><span class="pre">part_behav</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_behav" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Part.part_behav_con">
+<span class="sig-name descname"><span class="pre">part_behav_con</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Part.part_behav_con" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_cog">
+<span class="sig-name descname"><span class="pre">part_cog</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_cog" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_des">
+<span class="sig-name descname"><span class="pre">part_des</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_des" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_fts">
+<span class="sig-name descname"><span class="pre">part_fts</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_fts" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_id">
+<span class="sig-name descname"><span class="pre">part_id</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.IntegerProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_id" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_max">
+<span class="sig-name descname"><span class="pre">part_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_min">
+<span class="sig-name descname"><span class="pre">part_min</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_min" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_name">
+<span class="sig-name descname"><span class="pre">part_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Part.part_nrg">
+<span class="sig-name descname"><span class="pre">part_nrg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Part.part_nrg" title="Permalink to this definition"></a></dt>
+<dd><p>Returning the specified energy feature of a part.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Part.part_power">
+<span class="sig-name descname"><span class="pre">part_power</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Part.part_power" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_sim_abb">
+<span class="sig-name descname"><span class="pre">part_sim_abb</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_sim_abb" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_sim_name">
+<span class="sig-name descname"><span class="pre">part_sim_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_sim_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.part_ubdy">
+<span class="sig-name descname"><span class="pre">part_ubdy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.part_ubdy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Part.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Part.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Pltf">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Pltf</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Pltf" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Pltf.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Pltf.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">PltfDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Pltf.pltf_name">
+<span class="sig-name descname"><span class="pre">pltf_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Pltf.pltf_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Pltf.pltf_spec">
+<span class="sig-name descname"><span class="pre">pltf_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.JSONProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Pltf.pltf_spec" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Pltf.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Pltf.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Prtcl">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Prtcl</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Prtcl" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Prtcl.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Prtcl.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">PrtclDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Prtcl.prtcl_name">
+<span class="sig-name descname"><span class="pre">prtcl_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Prtcl.prtcl_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Prtcl.prtcl_spec">
+<span class="sig-name descname"><span class="pre">prtcl_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.JSONProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Prtcl.prtcl_spec" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Prtcl.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Prtcl.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Sim">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Sim</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<p>the simulation nodes that hold the global features of the simulation e.g.
+total energy</p>
+<p># Generic properties</p>
+<blockquote>
+<div><p>uid                 the unique id for simulaiton
+sim_name            simulation name should be a unique property
+sim_oem             to which car factory the result belongs to
+sim_abb             simulation name abbreviation, for better visualization of the name
+sim_lc              load case of the analysis e.g pedestrian head impact
+sim_rel             the development stage (release) of the product
+sim_dspln           the analysis discipline e.g. safety, durability
+dim_description     the specific labelling of the data e.g. optimization
+sim_path_pre        path to the file for input simulation data
+sim_path_post       path to the file for output simulation data</p>
+</div></blockquote>
+<p># Crash-specific properties
+# Energy features, initial time(t_i), absorption end time (t_n)</p>
+<blockquote>
+<div><p>sim_ie_tot_max      max of the total internal energy of the simulation
+sim_ie_prt_max      max of the internal energy of the parts in a simulation
+sim_ke_tot_max      max of the total kinetic energy of the simulation
+sim_ie_ti_ll        simulation t_i with the lower limit method (ll)
+sim_ie_ti_grad      simulation t_i with the gradient method (grad)
+sim_ie_tn_pct       simulation t_n with the percentage method (pct)
+sim_ie_tn_max       simulation t_n with the maximum method (max)
+sim_tn_pct_max      max of the parts for tn_pct value
+sim_tn_max_max      max of the parts for tn_max value
+sim_ti_ll_pp        ranges of the values for ti_ll
+sim_ti_grad_pp      ranges of the values for ti_grad
+sim_t_max           max of t_n</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>boolean</p>
+</dd>
+</dl>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Sim.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">SimDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.embed_nrg">
+<span class="sig-name descname"><span class="pre">embed_nrg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.embed_nrg" title="Permalink to this definition"></a></dt>
+<dd><p>normalize enery features based on options</p>
+<p>opt1 = ti_ll, tn_pct
+opt2 = ti_grad</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.embed_nrg_sel">
+<span class="sig-name descname"><span class="pre">embed_nrg_sel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ft</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pid_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.embed_nrg_sel" title="Permalink to this definition"></a></dt>
+<dd><p>normalize enery features based on options</p>
+<blockquote>
+<div><p>opt1 = ti_ll, tn_pct
+opt2 = ti_grad</p>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.forward_length">
+<span class="sig-name descname"><span class="pre">forward_length</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">maxLen</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.forward_length" title="Permalink to this definition"></a></dt>
+<dd><p>return the number of analysis done after current analysis</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_behavs">
+<span class="sig-name descname"><span class="pre">get_behavs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_behavs" title="Permalink to this definition"></a></dt>
+<dd><p>get the behaviour nodes belonging to an analysis.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_child">
+<span class="sig-name descname"><span class="pre">get_child</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_child" title="Permalink to this definition"></a></dt>
+<dd><p>query to get the analysis depending on the current analysis.</p>
+<p>return list of strings, simulation names</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_childByID">
+<span class="sig-name descname"><span class="pre">get_childByID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_childByID" title="Permalink to this definition"></a></dt>
+<dd><p>find the analysis depending on the current analysis with node input.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_childNodes">
+<span class="sig-name descname"><span class="pre">get_childNodes</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">prop</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_childNodes" title="Permalink to this definition"></a></dt>
+<dd><p>query to get the analysis depending on the current analysis.</p>
+<p>return Nodes</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_deses">
+<span class="sig-name descname"><span class="pre">get_deses</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_deses" title="Permalink to this definition"></a></dt>
+<dd><p>get the designs nodes belonging to an analysis.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_model">
+<span class="sig-name descname"><span class="pre">get_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_model" title="Permalink to this definition"></a></dt>
+<dd><p>What is the input FE-model into the current analyseses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_parts">
+<span class="sig-name descname"><span class="pre">get_parts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">relp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_parts" title="Permalink to this definition"></a></dt>
+<dd><p>what are the important parts of the current analyses</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.models.Sim.get_reference">
+<span class="sig-name descname"><span class="pre">get_reference</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Sim.get_reference" title="Permalink to this definition"></a></dt>
+<dd><p>What are the references of the current analysises</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_abb">
+<span class="sig-name descname"><span class="pre">sim_abb</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_abb" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_barr">
+<span class="sig-name descname"><span class="pre">sim_barr</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_barr" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_des">
+<span class="sig-name descname"><span class="pre">sim_des</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_des" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_description">
+<span class="sig-name descname"><span class="pre">sim_description</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_description" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_dspln">
+<span class="sig-name descname"><span class="pre">sim_dspln</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_dspln" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_elmnt">
+<span class="sig-name descname"><span class="pre">sim_elmnt</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_elmnt" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ie_prt_max">
+<span class="sig-name descname"><span class="pre">sim_ie_prt_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ie_prt_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ie_ti_grad">
+<span class="sig-name descname"><span class="pre">sim_ie_ti_grad</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ie_ti_grad" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ie_ti_ll">
+<span class="sig-name descname"><span class="pre">sim_ie_ti_ll</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ie_ti_ll" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ie_tn_max">
+<span class="sig-name descname"><span class="pre">sim_ie_tn_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ie_tn_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ie_tn_pct">
+<span class="sig-name descname"><span class="pre">sim_ie_tn_pct</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ie_tn_pct" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ie_tot_max">
+<span class="sig-name descname"><span class="pre">sim_ie_tot_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ie_tot_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_imp">
+<span class="sig-name descname"><span class="pre">sim_imp</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_imp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ke_tot_max">
+<span class="sig-name descname"><span class="pre">sim_ke_tot_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ke_tot_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_lc">
+<span class="sig-name descname"><span class="pre">sim_lc</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_lc" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_model">
+<span class="sig-name descname"><span class="pre">sim_model</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_model" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_name">
+<span class="sig-name descname"><span class="pre">sim_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_node">
+<span class="sig-name descname"><span class="pre">sim_node</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.RelationshipTo</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_node" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_nrg_part">
+<span class="sig-name descname"><span class="pre">sim_nrg_part</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_nrg_part" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_oem">
+<span class="sig-name descname"><span class="pre">sim_oem</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_oem" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_path_post">
+<span class="sig-name descname"><span class="pre">sim_path_post</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_path_post" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_path_pre">
+<span class="sig-name descname"><span class="pre">sim_path_pre</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_path_pre" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_rel">
+<span class="sig-name descname"><span class="pre">sim_rel</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_rel" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_t_max">
+<span class="sig-name descname"><span class="pre">sim_t_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_t_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ti_grad_pp">
+<span class="sig-name descname"><span class="pre">sim_ti_grad_pp</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ti_grad_pp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_ti_ll_pp">
+<span class="sig-name descname"><span class="pre">sim_ti_ll_pp</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_ti_ll_pp" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_tn_max_max">
+<span class="sig-name descname"><span class="pre">sim_tn_max_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_tn_max_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.sim_tn_pct_max">
+<span class="sig-name descname"><span class="pre">sim_tn_pct_max</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.FloatProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.sim_tn_pct_max" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Sim.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Sim.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Ubdy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Ubdy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Ubdy" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Ubdy.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Ubdy.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">UbdyDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Ubdy.ubdy_name">
+<span class="sig-name descname"><span class="pre">ubdy_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Ubdy.ubdy_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Ubdy.ubdy_spec">
+<span class="sig-name descname"><span class="pre">ubdy_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.JSONProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Ubdy.ubdy_spec" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Ubdy.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Ubdy.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.Veh">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">Veh</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.Veh" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredNode</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Veh.DoesNotExist">
+<span class="sig-name descname"><span class="pre">DoesNotExist</span></span><a class="headerlink" href="#load_data.models.Veh.DoesNotExist" title="Permalink to this definition"></a></dt>
+<dd><p>alias of <code class="xref py py-class docutils literal notranslate"><span class="pre">VehDoesNotExist</span></code></p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Veh.uid">
+<span class="sig-name descname"><span class="pre">uid</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.UniqueIdProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Veh.uid" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Veh.veh_abb">
+<span class="sig-name descname"><span class="pre">veh_abb</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Veh.veh_abb" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Veh.veh_name">
+<span class="sig-name descname"><span class="pre">veh_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.StringProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Veh.veh_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Veh.veh_pltf">
+<span class="sig-name descname"><span class="pre">veh_pltf</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Veh.veh_pltf" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Veh.veh_spec">
+<span class="sig-name descname"><span class="pre">veh_spec</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.JSONProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Veh.veh_spec" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.Veh.veh_ubdy">
+<span class="sig-name descname"><span class="pre">veh_ubdy</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.relationship_manager.Relationship</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.Veh.veh_ubdy" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.models.WgtRel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.models.</span></span><span class="sig-name descname"><span class="pre">WgtRel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span><span class="n"><span class="pre">args</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.models.WgtRel" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">StructuredRel</span></code></p>
+<p>Defining weighted relations for edges.
+the array size is the same to relay the key value
+relation of each property.</p>
+<blockquote>
+<div><p>w_e_value   array type describing a list of values.
+w_e_key     array type describing a list of keys.</p>
+</div></blockquote>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.WgtRel.w_e_key">
+<span class="sig-name descname"><span class="pre">w_e_key</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.WgtRel.w_e_key" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.models.WgtRel.w_e_value">
+<span class="sig-name descname"><span class="pre">w_e_value</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">&lt;neomodel.properties.ArrayProperty</span> <span class="pre">object&gt;</span></em><a class="headerlink" href="#load_data.models.WgtRel.w_e_value" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-load_data.tests">
+<span id="load-data-tests-module"></span><h2>load_data.tests module<a class="headerlink" href="#module-load_data.tests" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-load_data.urls">
+<span id="load-data-urls-module"></span><h2>load_data.urls module<a class="headerlink" href="#module-load_data.urls" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-load_data.views">
+<span id="load-data-views-module"></span><h2>load_data.views module<a class="headerlink" href="#module-load_data.views" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="load_data.views.IndexView">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">load_data.views.</span></span><span class="sig-name descname"><span class="pre">IndexView</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.views.IndexView" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ListView</span></code></p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.views.IndexView.context_object_name">
+<span class="sig-name descname"><span class="pre">context_object_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'run_list'</span></em><a class="headerlink" href="#load_data.views.IndexView.context_object_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="load_data.views.IndexView.get_queryset">
+<span class="sig-name descname"><span class="pre">get_queryset</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#load_data.views.IndexView.get_queryset" title="Permalink to this definition"></a></dt>
+<dd><p>Return N number of runs for load case a,b,c which are deined as
+/a,b,c/10. EX: fo5,fpq,for/10</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="load_data.views.IndexView.template_name">
+<span class="sig-name descname"><span class="pre">template_name</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'general/index.html'</span></em><a class="headerlink" href="#load_data.views.IndexView.template_name" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gae.html" class="btn btn-neutral float-left" title="gae package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="load_data.migrations.html" class="btn btn-neutral float-right" title="load_data.migrations package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Anahita Pakiman.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
