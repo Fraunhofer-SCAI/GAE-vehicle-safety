@@ -21,7 +21,3 @@ Indices and tables
 * :ref:`search`
 
 
-.. toctree::
-   SPHINX guide <README.md>
-   :maxdepth: 1
-   :caption: Others
