@@ -6,3 +6,4 @@
 
 - [ ] finish the code comments
 - [ ] deploy django page template for plotly
+- [ ] good sample
