@@ -1,4 +1,25 @@
-# GAE-vehicle-safety
+# Graph Assisted Engineering in Vehicle SafetyGAE-vehicle-safety
+
+GAE is a Django project (Python) for the creation and study of the graph database for the CAE models as a Graph to build a knowledge graph for CAE. Converting Computer Aided Engineering (CAE) to Graph Aided Engineering (GAE).
+
+- [Website (including documentation)](https://fraunhofer-scai.github.io/GAE-vehicle-safety/)
+- [Source](https://github.com/Fraunhofer-SCAI/GAE-vehicle-safety)
+- [Bug reports](https://github.com/Fraunhofer-SCAI/GAE-vehicle-safety/issues)
+- [GitHub Discussions](https://github.com/Fraunhofer-SCAI/GAE-vehicle-safety/discussions)
+
+<!-- Mailing list: https://groups.google.com/forum/#!forum/networkx-discuss -->
+<!-- Report a security vulnerability: https://tidelift.com/security -->
+<!-- Tutorial: https://networkx.org/documentation/latest/tutorial.html -->
+
+
+
+GAE is a graph modeling for CAE analysis in automotive R&D development processes, in connection with its design requirement.
+The first release of GAE considers vehicle safety with [EuroNCAP](https://www.euroncap.com/en) safety requirements.
+We connect CAE data to the protocols that are used to assess vehicle safety performances.
+The R&D process includes CAD engineering and safety attributes, with a focus on multidisciplinary problem-solving.
+For morinformation of graph modeling, [link](https://arxiv.org/abs/2209.14910). 
+
+<br />
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -10,22 +31,9 @@
   </ol>
 </details>
 
-<!-- PDF Extraction -->
-
-<br />
 <br />
 
-# Graph Assisted Engineering in Vehicle Safety
-
-GAE is a graph modeling for CAE analysis in automotive R&D development processes. in connection with its design requirement.
-The first release of GAE considers vehicle safety with [EuroNCAP](https://www.euroncap.com/en) safety requirements.
-We connect CAE data to the protocols that are used to assess vehicle safety performances.
-The R\&D process includes CAD engineering and safety attributes, with a focus on multidisciplinary problem-solving.
-For morinformation of graph modeling,nk](https://arxiv.org/abs/2209.14910).
-<br />
-<br />
-
-### Run Database Server
+## Run Database Server
 
 Currently the database is availabledump`file that is that is developed with`neo4j-community-4.2.4`dump file can be loaded into `neo4j-community-4.2.4`. We provide this version as it is no longer availble on neo4j webpage. you can extract it and then run the server with
 
