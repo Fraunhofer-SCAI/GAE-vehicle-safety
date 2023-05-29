@@ -11,3 +11,11 @@ recommonmark
 nbsphinx
 recommonmark
 sphinx-mdinclude
+django_plotly_dash
+channels
+bootstrap4
+dpd_static_support
+dash
+dash_bootstrap_components
+whitenoise
+pandas
