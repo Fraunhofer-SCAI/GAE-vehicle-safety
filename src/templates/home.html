@@ -1,0 +1,38 @@
+</head>
+<body>
+
+	<main>
+		<!-- If successful login -->
+		{% if user.is_authenticated %}
+
+		<h1>Plotly Dash Integration in Django</h1>
+		<h3>Hi {{ user.username }} !</h3>
+		<h3>You are loged in now</h3>
+		<h3>Click below links</h3>
+		<a href="{% url 'dash_plot' %}">Dash Plots</a> 
+		<br/>
+		<br/>
+		<a href="https://www.thinkinfi.com/2020/03/django-basic-login-logout-tutorial.html"">ThinkInfi</a> 
+		<br/>
+		<br/>
+		<button onclick="window.location.href = '{% url 'logout' %}';">logout</button>
+
+		<!-- If not successful login -->
+		{% else %}
+		<h1>Plotly Dash Integration in Django</h1>
+		<h3>You are not logged in </h3>
+		<h3>Please login to continue</h3>
+		<h3>Click below links</h3>
+		<a href="#">Dash Plots</a>
+		<br/>
+		<br/>
+		<a href="#">ThinkInfi</a>
+		<br/>
+		<br/>
+		<button onclick="window.location.href = '{% url 'login' %}';">login</button>
+
+		{% endif %}
+	</main>
+
+</body>
+</html>

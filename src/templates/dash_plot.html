@@ -1,0 +1,28 @@
+{%load plotly_dash%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Plotly in Django</title>
+</head>
+<body>
+	<main>
+		<!-- If successful login -->
+		{% if user.is_authenticated %}
+		<!-- Connect Plotly Dash with Django by ID mentioned in dash_app_code.py-->
+		{% plotly_app name='dash_integration_id' ratio=0.45 %}
+
+		<!-- If not successful login -->
+		{% else %}
+
+		<h3>You are not logged in</h3>
+		<h3>Please login to view plots</h3>
+		<br/>
+		<br/>
+		<button onclick="window.location.href = '{% url 'login' %}';">login</button>
+
+		{% endif %}
+
+	</main>
+
+</body>
+</html>

@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -33,7 +34,12 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     # internal added app
-    'load_data',
+    'ld_data',
+    'nrg_fts',
+    'sim_rnk',
+    'comp_detn',
+    'physc_grph',
+    'ld_pth_detn',
     # external added app
     'django_neomodel',
     # default
@@ -43,6 +49,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # plotly dash
+    'channels',
+    'bootstrap4',
+    'django_plotly_dash.apps.DjangoPlotlyDashConfig',
+    'dpd_static_support',
 ]
 
 MIDDLEWARE = [
@@ -56,11 +68,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'gae.urls'
+print(os.path.join(BASE_DIR, 'templates'))
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -135,3 +148,47 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # aviod sharing important credentials on the github
 
 ECRET_KEY = config('SECRET_KEY')
+
+
+# ———- Add Django Dash start ——————————–
+# Adding ASGI Application
+ASGI_APPLICATION = 'gae.routing.application'
+#
+# To use home.html as default home page
+LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
+
+# Define folder location of 'static' folder
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# 'gae': django app name
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'gae', 'static'),
+]
+# Static content of Plotly components that should
+# be handled by the Django staticfiles infrastructure
+PLOTLY_COMPONENTS = [
+    'dash_core_components',
+    'dash_html_components',
+    'dash_bootstrap_components',
+    'dash_renderer',
+    'dpd_components',
+    'dpd_static_support',
+]
+# Staticfiles finders for locating dash app assets and related files (Dash static files)
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django_plotly_dash.finders.DashAssetFinder',
+    'django_plotly_dash.finders.DashComponentFinder',
+    'django_plotly_dash.finders.DashAppDirectoryFinder',
+]
+# Channels config, to use channel layers
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            'hosts': [('127.0.0.1', 6379), ],
+        },
+    },
+}
