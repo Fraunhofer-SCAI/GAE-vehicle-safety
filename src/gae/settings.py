@@ -25,14 +25,19 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-07j+0)#8@up-b@#n9_nnh5w6&m(p5ghwiq#$zycn($0@ok^sn_'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'RENDER' not in os.environ
+# DEBUG = True
 
 ALLOWED_HOSTS = []
 
+RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
+if RENDER_EXTERNAL_HOSTNAME:
+    ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
 # Application definition
 
 INSTALLED_APPS = [
+    'admin_soft.apps.AdminSoftDashboardConfig',
     # internal added app
     'ld_data',
     'nrg_fts',
@@ -55,6 +60,7 @@ INSTALLED_APPS = [
     'bootstrap5',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'dpd_static_support',
+
 ]
 
 MIDDLEWARE = [
@@ -137,7 +143,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = os.path.join(BASE_DIR, 'templates/static/')  # '/static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -164,7 +170,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # 'gae': django app name
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'gae', 'static'),
+    os.path.join(BASE_DIR, 'static'),
 ]
 # Static content of Plotly components that should
 # be handled by the Django staticfiles infrastructure
