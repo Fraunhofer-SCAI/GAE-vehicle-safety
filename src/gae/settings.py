@@ -52,7 +52,7 @@ INSTALLED_APPS = [
 
     # plotly dash
     'channels',
-    'bootstrap4',
+    'bootstrap5',
     'django_plotly_dash.apps.DjangoPlotlyDashConfig',
     'dpd_static_support',
 ]
@@ -67,6 +67,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
 ROOT_URLCONF = 'gae.urls'
 print(os.path.join(BASE_DIR, 'templates'))
 
@@ -136,7 +137,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = os.path.join(BASE_DIR, 'templates/static/')  # '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

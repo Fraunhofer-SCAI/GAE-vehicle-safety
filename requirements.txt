@@ -13,7 +13,7 @@ recommonmark
 sphinx-mdinclude
 django_plotly_dash
 channels
-bootstrap4
+django-bootstrap-v5
 dpd_static_support
 dash
 dash_bootstrap_components
