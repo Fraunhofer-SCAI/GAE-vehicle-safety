@@ -13,8 +13,8 @@ import gae.oems as oems
 
 from django_plotly_dash import DjangoDash
 
-sys.path.append(os.path.abspath('..'))
-sys.path.append(os.path.abspath('../note_scripts/'))
+# sys.path.append(os.path.abspath('..'))
+# sys.path.append(os.path.abspath('../note_scripts/'))
 # import cypher_notebook_nrg as cyNrg
 
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']

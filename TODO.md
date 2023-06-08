@@ -9,3 +9,10 @@
 - [ ] finish the code comments
 - [ ] deploy django page template for plotly
 - [ ] good sample
+
+
+
+## updated
+- docker build
+- howto on making sphinx is lost
+- issue with django-bootstrap5 and django-neomodel

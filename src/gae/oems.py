@@ -1,6 +1,7 @@
 # PYTHON script
 import os
 import glob
+import sys
 
 
 class oems:
@@ -11,6 +12,7 @@ class oems:
         self.rls = rls
         self.lc = lc
         self.set_data_path()
+        self.set_post()
 
     def backend_server(self):
         from neo4j import GraphDatabase
@@ -97,6 +99,63 @@ class oems:
         if self.name == 'NISSAN':
 
             self.data_path = '/home/ndv/stud/data/NISSAN/full_front/NISSAN_ff_*'
+
+    def set_post(self):
+        if self.name == 'CEVT':
+            self.lc_pose = 3
+            self.views = ['top', 'front', 'right', 'btm']
+            self.states = '5/10/15/20/25/30/33'
+            self.states = '5/10/15/20/25/30/35/40/45/50/55/57/33'
+
+            # import sys
+            # sys.path.append(os.path.abspath('../src/cevt_vis'))
+            # sys.path.append(os.path.abspath('src/cevt_vis'))
+            # import pids
+            # pid_txt = 'pids.{}_{}'.format(self.rls, self.lc)
+            # try:
+            #     self.pid_list = eval(pid_txt)
+            # except AttributeError:
+            #     # print(pid_txt, 'is pid_txt')
+            #     pass
+
+            self.save_path = '/home/apakiman/kg01/dash-nrg/assets/CEVT'
+            if not os.path.isdir(self.save_path):
+                self.save_path = '/cevt/cae/backup/safety/users/anahita.pakiman1/kg01/dash-nrg/assets/CEVT'
+            sys.path.append(os.path.abspath('../src/cevt_vis'))
+
+        if self.name == 'YARIS':
+            self.lc_pose = 3
+            self.views = ['top', 'front', 'right', 'btm']
+            self.states = '5/10/15/20/25/30/33'
+            self.states = '5/10/15/20/25/30/35/40/45/50/55/60'
+
+            self.save_path = '/home/apakiman/Projects/kg01/dash-nrg/assets/YARIS'
+            self.pid_list = '''
+            2000511, 3000508, 2000011, 2000512, 3000001, 3000502,
+            2000001, 3000501, 2000501, 3000002, 2000000, 4000486,
+            3000504, 3000004, 3000003, 3000005, 3000503, 3000505,
+            3000506, 3000006, 3000007, 3000507, 3000509, 2000002,
+            2000502, 2000012, 3000008, 3000009'''
+
+        if self.name == 'TL2PID':
+            self.save_path = '/home/apakiman/Projects/kg01/transferDOE/apps/assets/TL2PID'
+            self.lc_pose = 3
+            self.views = ['top', 'front', 'right', 'btm']
+            self.states = '5/10/15/20/25/30/35/40/45/50/55/60'
+
+            self.pid_list = '''2000500, 2000501,10001001'''
+
+        if self.name == 'ENVS':
+            # self.lc_pose = 3
+            self.views = ['top']
+            self.states = '5/10/15/20/25/30/35/40/45/50/55/60'
+
+            self.pid_list = 'all'
+
+            self.save_path = '/home/apakiman/Projects/kg01/energy_model/apps/assets/ENVS'
+
+        if self.name == 'NISSAN':
+            self.save_path = '/home/apakiman/Projects/kg01/dash-nrg/assets/NISSAN'
 
     def metapost(self):
 
@@ -484,7 +543,7 @@ class oems:
 
         def feed_normalization(self):
             import numpy as np
-            import KG_feed_OEM_data as KG
+            import ld_data.functions as KG
 
             def nrg_normalized(nameReg, fts, norm_opt):
                 with driver.session() as session:
@@ -751,3 +810,9 @@ class oems:
 # oem = oems('CEVT', 'stv03', 'fp3')
 # oem.cypher().out_dataframe(ns=100, nPID=5, nOrd=5, regs='.*stv03.*fp3.*')
 # oem.metapost()
+
+if __name__ == '__main__':
+
+    import sys
+
+    print(sys.argv[1:])
