@@ -1,0 +1,13 @@
+{
+    "name": "GAE Workflow",
+    "description": "GAE CI starter workflow.",
+    "iconName": "octicon stopwatch24",
+    "categories": [
+        "Go"
+    ],
+    "filePatterns": [
+        "package.json$",
+        "^Dockerfile",
+        ".*\\.md$"
+    ]
+}
