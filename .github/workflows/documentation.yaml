@@ -13,7 +13,11 @@ jobs:
       - uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
+          if git diff --quiet HEAD^ requirements.txt; then
+            echo "Requirements file has not changed. Skipping installation."
+          else
+            pip install -r requirements.txt
+          fi
       - name: Sphinx build
         run: |
           sphinx-build docs docs/_build
