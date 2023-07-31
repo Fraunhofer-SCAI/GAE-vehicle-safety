@@ -18,9 +18,6 @@ jobs:
           else
             pip install -r requirements.txt
           fi
-      - name: Sphinx build
-        run: |
-          sphinx-build docs docs/_build
       - name: Ontology Documentation
         run: |
           pylode src/static/data/GAE-vehicle-safety-v1.1.rdf -o docs/_build/gae-ontology.html
