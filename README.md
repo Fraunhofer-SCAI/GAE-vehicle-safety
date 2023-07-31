@@ -33,6 +33,22 @@ For morinformation of graph modeling, [link](https://arxiv.org/abs/2209.14910).
 
 <br />
 
+## Dependencies 
+Install the requirements via conda or python venv for python 3.10.8, for anacona  envs:
+
+```
+conda create -n envs python=3.8.6
+conda activate envs
+```
+
+for virtual env, install python 3.8.6 and venv and then you can use:
+```
+python venv ./envs
+source envs/bin/activate
+
+```
+
+
 ## Run Database Server
 
 Currently the database is availabledump`file that is that is developed with`neo4j-community-4.2.4`dump file can be loaded into `neo4j-community-4.2.4`. We provide this version as it is no longer availble on neo4j webpage. you can extract it and then run the server with

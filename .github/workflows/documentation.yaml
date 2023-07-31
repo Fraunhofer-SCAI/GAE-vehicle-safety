@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ["3.10.8"]
+        python-version: ["3.8.6"]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
@@ -19,7 +19,7 @@ jobs:
           sphinx-build docs docs/_build
       - name: Ontology Documentation
         run: |
-          pylode src/static/data/GAE-vehicle-safety-v1.1.rdf docs/_build/gae-ontology.html
+          pylode src/static/data/GAE-vehicle-safety-v1.1.rdf -o docs/_build/gae-ontology.html
       - name: Deploy ontology-Sphinx
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
