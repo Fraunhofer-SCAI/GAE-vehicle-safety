@@ -24,9 +24,11 @@ jobs:
         id: check_requirements
         run: |
           if git diff --quiet HEAD requirements.txt; then
-            echo "::set-output name=cache_hit::true"
+            echo "name=cache_hit::true" >> $GITHUB_OUTPUT
+
           else
-            echo "::set-output name=cache_hit::false"
+            echo "name=cache_hit::false" >> $GITHUB_OUTPUT
+
           fi
         continue-on-error: true
 
