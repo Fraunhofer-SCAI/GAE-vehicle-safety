@@ -18,7 +18,7 @@ jobs:
       - name: Check for Changes
         id: check_changes
         run: |
-          if git diff --quiet HEAD^ src/static/data/GAE-vehicle-safety-v1.1.rdf; then
+          if git diff --quiet HEAD src/static/data/GAE-vehicle-safety-v1.1.rdf; then
             echo "No changes to push."
             exit 78
           else
