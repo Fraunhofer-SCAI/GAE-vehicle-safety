@@ -1,0 +1,35 @@
+name: Generate Ontology Report
+
+on:
+  push:
+    branches:
+      - main  # Replace with your main branch name
+
+jobs:
+  generate_report:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8.6
+
+      - name: Install pyLODE
+        run: |
+          pip install pylode
+
+      - name: Generate Ontology Report
+        run: |
+          pylode src/static/data/GAE-vehicle-safety-v1.1.rdf -o src/ld_data/templates/ontology/gae-ontology.html
+
+      - name: Commit and Push Ontology Report
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add src/ld_data/templates/ontology/gae-ontology.html
+          git commit -m "Update ontology report"
+          git push origin main 

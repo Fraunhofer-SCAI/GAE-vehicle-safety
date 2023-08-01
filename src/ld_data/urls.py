@@ -4,7 +4,7 @@ from . import views
 app_name = 'ld_data'
 
 urlpatterns = [
-    path(
-        '',
-        views.IndexView.as_view(), name='index'
-        )]
+    path('', views.IndexView.as_view(), name='index'),
+    path('ontology-report/', views.ontology_report_view, name='ontology_report'),
+]
+
