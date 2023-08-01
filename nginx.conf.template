@@ -1,0 +1,20 @@
+worker_processes auto;
+events {
+    # Sets the maximum number of simultaneous connections that can be opened by a worker process.
+    worker_connections 8000;
+    # Tells the worker to accept multiple connections at a time
+    multi_accept on;
+}
+http {
+   include       ./mime.types;
+   default_type  application/octet-stream;
+    server {
+          listen 80;
+          location / {
+            # where the root here
+            root src;
+            index index.html;
+            try_files $uri $uri/ /index.html;
+          }
+    }
+}
