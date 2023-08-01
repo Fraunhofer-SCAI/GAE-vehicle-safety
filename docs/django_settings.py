@@ -6,7 +6,7 @@
 
 INSTALLED_APPS = [
     # internal added app
-    'load_data',
+    'ld_data',
     # general
     "django.contrib.auth",
     "django.contrib.contenttypes",
