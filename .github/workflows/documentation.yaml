@@ -33,7 +33,6 @@ jobs:
         continue-on-error: true
 
       - name: Install dependencies
-        if: steps.check_requirements.outputs.cache_hit == 'false'
         run: |
             pip install -r requirements.txt
 
