@@ -8,33 +8,41 @@ jobs:
     strategy:
       matrix:
         python-version: ["3.8.6"]
+
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
 
+
       - name: Cache dependencies
-        id: cache
+        id: cache-python-deps
         uses: actions/cache@v3
         with:
-          path: ~/.python/caches
-          key: dependencies-${{ hashFiles('requirements.txt') }}
+          path: ~/.cache/pip
+          key: -python-deps-${{ hashFiles('requirements.txt') }}
 
-
-      - name: Check for changes in requirements.txt
-        id: check_requirements
-        run: |
-          if git diff --quiet HEAD requirements.txt; then
-            echo "name=cache_hit::true" >> $GITHUB_OUTPUT
-          else
-            echo "name=cache_hit::false" >> $GITHUB_OUTPUT
-
-          fi
-        continue-on-error: true
 
       - name: Install dependencies
-        if: steps.check_requirements.outputs.cache_hit == 'true'
         run: |
-            pip install -r requirements.txt
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+
+      # - name: Check for changes in requirements.txt
+      #   id: check_requirements
+      #   run: |
+      #     if git diff --quiet HEAD requirements.txt; then
+      #       echo "name=cache_hit::true" >> $GITHUB_OUTPUT
+      #     else
+      #       echo "name=cache_hit::false" >> $GITHUB_OUTPUT
+
+      #     fi
+      #   continue-on-error: true
+
+      # - name: Install dependencies
+      #   # if: steps.check_requirements.outputs.cache_hit == 'true'
+      #   run: |
+      #       pip install -r requirements.txt
 
       - name: Sphinx build
         run: |
