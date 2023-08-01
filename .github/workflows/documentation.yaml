@@ -17,6 +17,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ~/.python/caches
+          key: dependencies-${{ hashFiles('requirements.txt') }}
+
 
       - name: Check for changes in requirements.txt
         id: check_requirements
