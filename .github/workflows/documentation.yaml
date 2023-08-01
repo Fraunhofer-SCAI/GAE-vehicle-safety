@@ -25,7 +25,6 @@ jobs:
         run: |
           if git diff --quiet HEAD requirements.txt; then
             echo "name=cache_hit::true" >> $GITHUB_OUTPUT
-
           else
             echo "name=cache_hit::false" >> $GITHUB_OUTPUT
 
@@ -33,6 +32,7 @@ jobs:
         continue-on-error: true
 
       - name: Install dependencies
+        if: steps.check_requirements.outputs.cache_hit == 'true'
         run: |
             pip install -r requirements.txt
 
