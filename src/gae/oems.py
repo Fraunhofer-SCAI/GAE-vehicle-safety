@@ -522,6 +522,7 @@ class oems:
                         '''
                     if limit:
                         txt = txt + 'limit {}'.format(limit)
+                    
                     result = session.run(txt, name=sr)
                     for record in result:
                         simList.append(record.values()[0])
@@ -598,7 +599,7 @@ class oems:
                 edit filtering seting, no sim is selected
                 --------------------------------------------------------
                 ''')
-                return
+                return 
 
             sims_nrg = np.array(sims_nrg)
             sims_pid = np.array(sims_pid)
@@ -649,8 +650,12 @@ class oems:
 
             self.rmv_err()
 
-            sims_nrg, sims_pid, sims = self.feed_normalization()
-
+            out_normalized = self.feed_normalization()
+            if out_normalized:
+                sims_nrg, sims_pid, sims = out_normalized
+            else:
+                return
+            
             try:
                 sims_pid = sims_pid[:, :nPID]
             except IndexError:

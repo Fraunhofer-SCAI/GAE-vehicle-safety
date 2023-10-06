@@ -28,6 +28,7 @@ note_scripts/LSDYNA_script/
 **/.history
 **/_build
 **/staticfiles
+db.sqlite3
 
 
 
