@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'ld_pth_detn',
     # external added app
     'django_neomodel',
+    'django_extensions',
     # default
     'django.contrib.admin',
     'django.contrib.auth',
