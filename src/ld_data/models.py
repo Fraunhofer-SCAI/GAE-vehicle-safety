@@ -145,7 +145,7 @@ class Behav(neomodel.StructuredNode):
     uid = neomodel.UniqueIdProperty()
     behav_type = neomodel.StringProperty()
 
-    behav_embd = neomodel.FloatProperty(unique_index=True)
+    behav_embd = neomodel.FloatProperty()
     behav_id = neomodel.StringProperty()
 
     behav_method = neomodel.StringProperty()
@@ -163,7 +163,6 @@ class Behav(neomodel.StructuredNode):
             where e.uid = '{0}'
             return s.uid
             """.format(self.uid)
-        # print(cypherTxt)
         sUids = self.cypher(cypherTxt)
         sUids = [x[0] for x in sUids[0]]
 
@@ -185,11 +184,17 @@ class Des(neomodel.StructuredNode):
     :param des_pid:
         The property ID (PID), of the design.
     :type behav_embd: int
+    :param des_behav:
+        The relationship connecting the Des to its Behav, "DES_BEHAV".
+    :type des_behav: neomodel.RelationshipTo
+
     """
 
     uid = neomodel.UniqueIdProperty()
     des_type = neomodel.StringProperty()
     des_pid = neomodel.IntegerProperty()
+
+    des_behav = neomodel.RelationshipTo('Behav', 'DES_BEHAV')
 
 
     def get_byType(self):
@@ -606,6 +611,22 @@ class Part(neomodel.StructuredNode):
         The simulation abbreviation name .
     :type part_sim_abb: string
 
+    
+    :param nrg_max
+        Max of internal energy
+    :type nrg_max: float 
+    :param ti_ll
+        Initial absorption with lower limit method.
+    :type ti_ll: float 
+    :param ti_grad
+        Initial absorption with gradient method.
+    :type ti_grad: float 
+    :param tn_pct
+        End of absorption with pct method.
+    :type tn_pct: float 
+    :param tn_max
+        End of absorption with max method.
+    :type tn_max: float 
 
     :param part_cog:
         The centre of the part if located in a box, x, y, z.
@@ -648,6 +669,22 @@ class Part(neomodel.StructuredNode):
     part_des = neomodel.Relationship('Des', 'PART_DES', model=WgtRel)
     part_behav = neomodel.Relationship('Behav', 'PART_BEHAV')
     part_pltf = neomodel.Relationship('Pltf', 'BELONGS_TO')
+    part_ubdy = neomodel.Relationship('Ubdy',  'BELONGS_TO')
+    part_fts = neomodel.Relationship('Mthd', 'PART_FTS', model=Fts)
+
+
+    # ------------------------------------------
+    # should move to Mthd node and Fts edge
+    nrg_max = neomodel.FloatProperty()
+    ti_ll = neomodel.FloatProperty()
+    ti_grad = neomodel.FloatProperty()
+    tn_pct = neomodel.FloatProperty()
+    tn_max = neomodel.FloatProperty()
+    # ------------------------------------------
+
+    part_des = neomodel.Relationship('Des', 'PART_DES', model=WgtRel)
+    part_behav = neomodel.Relationship('Behav', 'PART_BEHAV')
+    Ipart_pltf = neomodel.Relationship('Pltf', 'BELONGS_TO')
     part_ubdy = neomodel.Relationship('Ubdy',  'BELONGS_TO')
     part_fts = neomodel.Relationship('Mthd', 'PART_FTS', model=Fts)
 
@@ -888,6 +925,9 @@ class Sim(neomodel.StructuredNode):
     :param sim_des:
         Connecting simulation to its design nodes, 'SIM_DES', model=WgtRel.
     :type sim_des: neomodel.RelationshipTo
+    :param sim_behav:
+        The relationship connecting the Sim to its Behav, "SIM_BEHAV".
+    :type sim_behav: neomodel.RelationshipTo
     
     Crash-specific properties:
 
@@ -963,6 +1003,7 @@ class Sim(neomodel.StructuredNode):
     sim_imp = neomodel.RelationshipTo('Imp', 'SIM_IMP')
     sim_barr = neomodel.RelationshipTo('Imp', 'SIM_BARR')
     sim_des = neomodel.RelationshipTo('Des', 'SIM_DES', model=WgtRel)
+    sim_behav = neomodel.RelationshipTo('Behav', 'SIM_BEHAV')
 
     # energy features
     sim_ie_tot_max = neomodel.FloatProperty()

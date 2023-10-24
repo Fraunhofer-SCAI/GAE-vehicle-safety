@@ -58,7 +58,6 @@ class PopulateSim:
 
         self.binout = get_binout(self.Job.pathPost)
         self._populate_sim_fts_parts()
-        return ('test')
 
     def cnct_nodes(self, method, lc='', rls0='', dspln=''):
         feat_list = [
@@ -73,11 +72,12 @@ class PopulateSim:
         fts_opt = [feat_list[i] for i in [0, 1, 3]]
 
         neomodelUpdate.group_pid(lc, rls0, dspln)
-        for f in fts_opt:
-            neomodelUpdate.nrg_behavior(f, method, lc, rls0, dspln)
-        neomodelUpdate.connect_sim_behav(lc, rls0, dspln)
+        # for f in fts_opt:
+        #     neomodelUpdate.nrg_behavior(f, method, lc, rls0, dspln)
+        # neomodelUpdate.connect_sim_behav(lc, rls0, dspln)
         neomodelUpdate.connect_sim_des(lc, rls0, dspln)
-        neomodelUpdate.connect_behav_des(lc, rls0, dspln)
+        neomodelUpdate.connect_sim_des_weighted('nrg_max')
+        # neomodelUpdate.connect_behav_des(lc, rls0, dspln)
 
     def _populate_sim_fts_parts(self):
 
@@ -519,25 +519,26 @@ class neomodelUpdate:
 
         for part in parts:
             fts = part.part_nrg(fts_opt)
-            behav_old = Behav.nodes.get_or_none(
-                behav_embd=fts,
-                behav_method=method,
-                behav_id=fts_opt)
-            if behav_old:
-                # print('behavior exist', behav_old.uid)
-                behav_uid = behav_old.uid
-                con = part.part_behav_con(behav_uid)
-                if not con:
-                    part.part_behav.connect(behav_old)
-            else:
-                # print('add behav for part', part.uid)
-                behav = Behav(
-                    behav_type=type,
+            if fts:
+                behav_old = Behav.nodes.get_or_none(
                     behav_embd=fts,
-                    behav_id=fts_opt,
-                    behav_method=method)
-                behav.save()
-                part.part_behav.connect(behav)
+                    behav_method=method,
+                    behav_id=fts_opt)
+                if behav_old:
+                    # print('behavior exist', behav_old.uid)
+                    behav_uid = behav_old.uid
+                    con = part.part_behav_con(behav_uid)
+                    if not con:
+                        part.part_behav.connect(behav_old)
+                else:
+                    # print('add behav for part', part.uid)
+                    behav = Behav(
+                        behav_type=type,
+                        behav_embd=fts,
+                        behav_id=fts_opt,
+                        behav_method=method)
+                    behav.save()
+                    part.part_behav.connect(behav)
 
     def connect_behav_des(lc='', rel='', dspln='', mType='pid'):
         print('connect behavior to design')

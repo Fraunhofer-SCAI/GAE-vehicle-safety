@@ -10,6 +10,7 @@ import plotly.express as px
 import time
 import nrg_fts.functions as functions
 from gae.constants import OEM_NAME
+from django.templatetags.static import static 
 
 
 
@@ -40,7 +41,7 @@ def set_plots(c_grp, ords, ns, nPid, sims, pids):
     df1 = queryNrg.out_dataframe(
         ns=int(ns), nPID=int(nPid), nOrd=ords, regs=sims, regp=pids)
     
-    if not df1:
+    if df1 is None:
         return '', '', '', ''
 
     h_data = {
@@ -82,7 +83,7 @@ def set_plots(c_grp, ords, ns, nPid, sims, pids):
 
 c_grp = 'c_grPID'
 # c_grp='c_grOrd'
-c_grp = 'c_rls'
+c_grp = 'c_grPID'
 ords = 10
 ns = 100
 nPid = 10
@@ -300,9 +301,9 @@ def display_click_data(cData1, cData2, cData3, sData2, sData3, pos, old, tVal, s
         else:
             name = c_i.replace('iso', pos)
             obj = html.Img(
-                src=name,
+                src=static(name),
                 # src=app.get_asset_url(name),
-                style={"height": "40vh", "display": "block", "margin": "auto"}
+                style={"height": "20vh", "display": "block", "margin": "auto"}
             ),
         return(obj, txt, txt2, name, None, None, None, None, None, None)
     return(None, txt, txt2, None, None, None, None, None, None, None)

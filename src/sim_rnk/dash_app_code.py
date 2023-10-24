@@ -21,7 +21,7 @@ app.layout = html.Div(
         # Adding one extar Div
         html.Div([
             html.H1(children='SimRank'),
-            html.H3(children='Indian Population over time'),
+            html.H3(children='Comming soon ...'),
             html.Div(children='Dash: Python framework to build web application'),
         ], className='row'),
 
