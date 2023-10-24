@@ -8,7 +8,9 @@ from dash.dependencies import Input, Output
 from dash.exceptions import PreventUpdate
 import plotly.express as px
 import time
-import gae.oems as oems
+import nrg_fts.functions as functions
+from gae.constants import OEM_NAME
+
 
 
 from django_plotly_dash import DjangoDash
@@ -34,9 +36,12 @@ styles = {
 
 def set_plots(c_grp, ords, ns, nPid, sims, pids):
     start = time.time()
-    oem = oems.oems('CEVT')
-    df1 = oem.cypher().out_dataframe(
+    queryNrg = functions.QueyNrgFts(OEM_NAME)
+    df1 = queryNrg.out_dataframe(
         ns=int(ns), nPID=int(nPid), nOrd=ords, regs=sims, regp=pids)
+    
+    if not df1:
+        return '', '', '', ''
 
     h_data = {
         "sim": True,
@@ -81,12 +86,9 @@ c_grp = 'c_rls'
 ords = 10
 ns = 100
 nPid = 10
-sims = '.*stv0_.*fp3.*,.*stv03_.*fp3.*'
-pids = ''
-# pids =  '10021520, 10020420, 18620120, 18620080'
-pids = '10021520, 10020420, 18620080, 18620120, 55131400, 55132410, 55132590,55021040, 55021060, 18620070, 18620110'  # stv0
+sims = '.*'
+pids = '.*' 
 
-pids += '18620090, 18620070, 10021870, 10021320, 55131440, 55131220, 55021060, 55021040'  # fp3 stv03
 fig1, fig2, fig3, fig4 = set_plots(c_grp, ords, ns, nPid, sims, pids)
 
 app.layout = html.Div([

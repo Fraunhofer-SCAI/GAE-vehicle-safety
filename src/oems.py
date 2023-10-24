@@ -26,12 +26,6 @@ class oems:
 
 
     def backend_server(self):
-        
-        neo_user = os.getenv("NEO4J_USE")
-        neo_pass = os.getenv("NEO4J_PASS")
-        host = os.getenv("NEO4J_HOST")
-        svr_id = os.getenv("NEO4J_PORT")
-        bolt = os.getenv("NEO4J_BOLT")
 
         def neo4j_bolt():
 
@@ -39,9 +33,15 @@ class oems:
                 'NEO4J_BOLT_URL', f'bolt://{neo_user}:{neo_pass}@{host}:{svr_id}')
 
 
-            uri = f"neo4j://{host}:{bolt}"
+            uri = f"neo4j://{host}:{svr_id}"
             self.driver = GraphDatabase.driver(uri, auth=(neo_user, neo_pass))
-            neo4j_bolt()
+        
+        neo_user = os.getenv("NEO4J_USER")
+        neo_pass = os.getenv("NEO4J_PASS")
+        host = os.getenv("NEO4J_HOST")
+        svr_id = os.getenv("SVR_ID")
+        bolt = os.getenv("NEO4J_BOLT")
+        neo4j_bolt()
 
 
 

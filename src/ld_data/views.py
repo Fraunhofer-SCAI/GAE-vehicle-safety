@@ -25,11 +25,12 @@ def LoadView(request):
         sim = CaeSim(OEM_NAME)
         sim.dataOEM(s)
         PS = PopulateSim(sim)
-        PS.populate_sim
-        # break
+        res = PS.populate_sim()
+        print(res)
         # update_part(sim, pids_box, rng_box, cog_box)
+
     # connect nodes
-    # nrg_nodes('IE_ti_tn', lc=lc)
+    # PS.cnct_nodes('IE_ti_tn', lc='front')
 
     msg = ', '.join(msg)
 

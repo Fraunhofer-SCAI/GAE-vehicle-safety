@@ -7,20 +7,20 @@ import pandas as pd
 import networkx as nx
 # from qd.cae.dyna import Binout, D3plot, KeyFile
 from lasso.dyna import Binout, D3plot  # KeyFile
-from ld_data.models import Sim, Part, Node, Model, Barr, Imp
+from ld_data.models import Sim, Part, Node, Model, Barr, Imp, Behav, Des
 # from model_func import MthdF
-# import update_graph as UG
 # from energy_model import grp_nrg_fts
-import gae.oems
+import nrg_fts.functions
+from neomodel import config, Q
 
 import matplotlib.pyplot as plt
 
 
-class PopulateSim():
+class PopulateSim:
 
     def __init__(self, job, pids=[], coords=[]):
 
-        self.job = job
+        self.Job = job
         self.pids = pids
         self.coords = coords
 
@@ -39,7 +39,7 @@ class PopulateSim():
         """
 
         sim_old = Sim.nodes.get_or_none(sim_name=self.Job.name)
-        self.sim_new = Sim(
+        self.sim = Sim(
             sim_oem=self.Job.oem,
             sim_name=self.Job.name,
             sim_abb=self.Job.abb,
@@ -54,10 +54,30 @@ class PopulateSim():
             delete_list_uid(sim_old.get_childNodes('uid', 'Node'), Node)
             delete_list_uid(sim_old.get_childNodes('uid', 'Part'), Part)
             sim_old.delete()
-        self.sim_new.save()
+        self.sim.save()
 
         self.binout = get_binout(self.Job.pathPost)
-        self._populate_sim_fts_parts(self.Job, )
+        self._populate_sim_fts_parts()
+        return ('test')
+
+    def cnct_nodes(self, method, lc='', rls0='', dspln=''):
+        feat_list = [
+            "nrg_max",  # 0
+
+            "ti_grad",  # 1
+            "ti_ll",  # 2
+
+            "tn_pct",  # 3
+            "tn_max"]  # 4
+     # ------------------------------------------------------------
+        fts_opt = [feat_list[i] for i in [0, 1, 3]]
+
+        neomodelUpdate.group_pid(lc, rls0, dspln)
+        for f in fts_opt:
+            neomodelUpdate.nrg_behavior(f, method, lc, rls0, dspln)
+        neomodelUpdate.connect_sim_behav(lc, rls0, dspln)
+        neomodelUpdate.connect_sim_des(lc, rls0, dspln)
+        neomodelUpdate.connect_behav_des(lc, rls0, dspln)
 
     def _populate_sim_fts_parts(self):
 
@@ -95,24 +115,24 @@ class PopulateSim():
 
         # to save the new property it is needed to regreb the node
         # sim = Sim.nodes.get_or_none(sim_name=Job.name)
-            sim.sim_ie_tot_max = nrgFtr.IEtotMax
-            sim.sim_ie_prt_max = nrgFtr.IEprtMax
-            sim.sim_ke_tot_max = nrgFtr.KEtotMax
-            sim.sim_ie_ti_ll = nrgFtr.IEtiLL
-            sim.sim_ie_ti_grad = nrgFtr.IEtiGrad
-            sim.sim_ie_tn_pct = nrgFtr.IEtnPct
-            sim.sim_ie_tn_max = nrgFtr.IEtnMax
-            sim.sim_tn_pct_max = nrgFtr.tnPctMax
-            sim.sim_tn_max_max = nrgFtr.tnMaxMax
-            sim.sim_ti_ll_pp = nrgFtr.tiLLpp
-            sim.sim_ti_grad_pp = nrgFtr.tiGradpp
-            sim.sim_t_max = nrgFtr.tMax
-            sim.save()
+            self.sim.sim_ie_tot_max = nrgFtr.IEtotMax
+            self.sim.sim_ie_prt_max = nrgFtr.IEprtMax
+            self.sim.sim_ke_tot_max = nrgFtr.KEtotMax
+            self.sim.sim_ie_ti_ll = nrgFtr.IEtiLL
+            self.sim.sim_ie_ti_grad = nrgFtr.IEtiGrad
+            self.sim.sim_ie_tn_pct = nrgFtr.IEtnPct
+            self.sim.sim_ie_tn_max = nrgFtr.IEtnMax
+            self.sim.sim_tn_pct_max = nrgFtr.tnPctMax
+            self.sim.sim_tn_max_max = nrgFtr.tnMaxMax
+            self.sim.sim_ti_ll_pp = nrgFtr.tiLLpp
+            self.sim.sim_ti_grad_pp = nrgFtr.tiGradpp
+            self.sim.sim_t_max = nrgFtr.tMax
+            self.sim.save()
         else:
             return()
             # sim.delete()
         end = time.time()
-        _trace_time(end - start, 'populate_sim_nrg_parts')
+        trace_time(end - start, 'populate_sim_nrg_parts')
 
     def _populate_sim_nrg_parts_grid(self, value, func):
         """
@@ -136,7 +156,7 @@ class PopulateSim():
             #     a = MthdF.cnct_part_fts(mthd, pid, self.sim.sim_name, fts)
 
         end = time.time()
-        _trace_time(end - start, 'populate_sim_nrg_parts_grid')
+        trace_time(end - start, 'populate_sim_nrg_parts_grid')
 
     def _energy_feature(self, out=None):
 
@@ -274,14 +294,15 @@ class PopulateSim():
             def box_fts(self):
 
                 # mrg curves
-                if os.path.isfile(self.Job.boxGrp):
+                if os.path.isfile(Job.boxGrp):
                     self.box_mrg_df = curv_mrg(self.Job)
                 else:
                     print('NO JSON FILE TO MERGE PARTS')
-                    print('path:', self.Job.boxGrp)
+                    print('path:', Job.boxGrp)
                     self.box_mrg_df = None
 
         start = time.time()
+        Job = self.Job
         cfg = self.Job.energyCurve
         try:
             curv, t, ids, _, curv2 = binout_vals(
@@ -294,7 +315,7 @@ class PopulateSim():
         fts.box_fts()
 
         end = time.time()
-        _trace_time(end - start, 'nrgFtr')
+        trace_time(end - start, 'nrgFtr')
 
         if out:
             return(t, ids, curv, fts)
@@ -335,9 +356,10 @@ class PopulateSim():
             ts.append(tsi)
 
         end = time.time()
-        _trace_time(end - start, 'IE grid')
+        trace_time(end - start, 'IE grid')
 
         return(IEs, ts, fts.pid)
+
 
 
 class File:
@@ -370,7 +392,6 @@ class File:
         self.txt = txt
         self.path = file
 
-
 class DataBinout:
 
     def energy(self):
@@ -381,46 +402,11 @@ class DataBinout:
         self.pctMax = 0.95
         self.pctGrad = 0.0001
 
-    def nrgPAG(self):
-        self.energy()
-        self.pidExc = np.array([20005200, 20001800])
-        self.barrier = [0, 10009999]
-        self.pidMin, self.pidMax = 0, 20
-
-    def nrgCEVT(self):
-        self.energy()
-        self.pidExc = np.array([])
-        self.barrier = [98000000, 99999999]
-        self.pidMin, self.pidMax = 0, 20
-
-    def nrgYARIS(self):
+    def nrgOem(self):
         self.energy()
         self.pidExc = np.array([])
         self.barrier = [10000000, 10001062]
         self.pidMin, self.pidMax = 0, 50
-
-    def nrgTL2PID(self):
-        self.energy()
-        self.pidExc = np.array([970101])
-        self.barrier = [10001000, 10001001]
-        self.pidMin, self.pidMax = 0, 2
-
-        self.pctMax = 0.98
-
-    def nrgENVS(self):
-        self.energy()
-        self.pidExc = np.array([])
-        self.barrier = [1, 1]
-        self.pidMin, self.pidMax = 0, 1000
-
-        self.pctMax = 0.98
-
-    def nrgPEDPRO(self):
-        self.energy()
-        self.pidExc = np.array([])
-        self.barrier = [10000000, 10001062]
-        self.pidMin, self.pidMax = 0, 50
-
 
 class DataD3plot:
     def __init__(self, oemf):
@@ -448,7 +434,6 @@ class DataD3plot:
             mask = d3plot.get_part_filter(FilterType.NODE, part_ids)
             disp = disp[:, mask]
         return (disp)
-
 
 class CaeSim:
 
@@ -490,7 +475,7 @@ class CaeSim:
         self.dspln = 'front'
 
         self.energyCurve = DataBinout()
-        self.energyCurve.nrgYARIS()
+        self.energyCurve.nrgOem()
 
         self.nodeStatus = DataBinout()
         self.boxGrp = 'energy_model/src/bumper/box.json'  # YARIS_BUMPER
@@ -500,6 +485,203 @@ class CaeSim:
             'nrg_parts': [],
         }
 
+class neomodelUpdate:
+
+    def group_pid(rel='', lc='', dspln=''):
+        print('Group PID')
+        parts = Part.nodes.filter(
+            Q(part_sim_name__contains=lc)
+            & Q(part_sim_name__contains=rel)
+            & Q(part_sim_name__contains=dspln)
+        )
+        print(parts)
+        for p in parts:
+            pid = p.part_id
+            # print(p.part_sim_name)
+            # print(pid)
+
+            print(p)
+            des_curr = Des.nodes.get_or_none(des_pid=pid)
+            if not des_curr:
+                des_curr = Des(
+                    des_type='pid',
+                    des_pid=pid)
+                des_curr.save()
+            p.part_des.connect(des_curr)
+
+    def nrg_behavior(fts_opt, method, type='nrg', lc='', rel='', dspln=''):
+        print('NRG_behavior: ' + fts_opt)
+        parts = Part.nodes.filter(
+            Q(part_sim_name__contains=lc)
+            & Q(part_sim_name__contains=rel)
+            & Q(part_sim_name__contains=dspln)
+        )
+
+        for part in parts:
+            fts = part.part_nrg(fts_opt)
+            behav_old = Behav.nodes.get_or_none(
+                behav_embd=fts,
+                behav_method=method,
+                behav_id=fts_opt)
+            if behav_old:
+                # print('behavior exist', behav_old.uid)
+                behav_uid = behav_old.uid
+                con = part.part_behav_con(behav_uid)
+                if not con:
+                    part.part_behav.connect(behav_old)
+            else:
+                # print('add behav for part', part.uid)
+                behav = Behav(
+                    behav_type=type,
+                    behav_embd=fts,
+                    behav_id=fts_opt,
+                    behav_method=method)
+                behav.save()
+                part.part_behav.connect(behav)
+
+    def connect_behav_des(lc='', rel='', dspln='', mType='pid'):
+        print('connect behavior to design')
+        sims = Sim.nodes.filter(
+            Q(sim_name__contains=lc)
+            & Q(sim_name__contains=rel)
+            & Q(sim_name__contains=dspln)
+        )
+        for s in sims:
+            # print(s.sim_name)
+            deses = s.get_deses()
+            for m in deses:
+                des = Des.nodes.get_or_none(uid=m)
+                behavs = des.get_behav()
+
+                for e in behavs:
+                    behav = Behav.nodes.get_or_none(uid=e)
+                    # print(behav.uid)
+                    des.des_behav.connect(behav)
+
+    def connect_sim_behav(lc='', rel='', dspln=''):
+        print('connect sim to behavior')
+        sims = Sim.nodes.filter(
+            Q(sim_name__contains=lc)
+            & Q(sim_name__contains=rel)
+            & Q(sim_name__contains=dspln)
+        )
+        for s in sims:
+            # print(s.sim_name)
+            behavs = s.get_behavs()
+            for e in behavs:
+                behav = Behav.nodes.get_or_none(uid=e)
+                s.sim_behav.connect(behav)
+
+    def connect_sim_des(lc='', rel='', dspln=''):
+        print('connect sim to design')
+        sims = Sim.nodes.filter(
+            Q(sim_name__contains=lc)
+            & Q(sim_name__contains=rel)
+            & Q(sim_name__contains=dspln)
+        )
+        for s in sims:
+            # print(s.sim_name)
+            deses = s.get_deses()
+            for m in deses:
+                des = Des.nodes.get_or_none(uid=m)
+                s.sim_des.connect(des)
+
+    def connect_sim_des_weighted(ft='nrg_max', lc='', rel='', dspln=''):
+        '''
+            match (d:Des)-[r]-(s:Sim)-[]-(p:Part)
+        where d.des_pid = p.part_id
+        set r.weight=p.nrg_max
+        //set r.weight=p.nrg_max/(p.tn_pct - p.ti_grad)
+        //return max(r.weight), max(p.nrg_max ),
+        return r.weight, p.nrg_max ,d.des_pid, p.part_id
+        //return p
+        '''
+        print('connect sim to design')
+        parts = Part.nodes.filter(
+            Q(part_sim_name__contains=lc)
+            & Q(part_sim_name__contains=rel)
+            & Q(part_sim_name__contains=dspln)
+        )
+        for p in parts:
+            pid = p.part_id
+            w = p.part_nrg(ft)
+            w = p.part_power()
+            print(w)
+
+            sim = Sim.nodes.get_or_none(uid=p.get_sim())
+            des = Des.nodes.get_or_none(uid=p.get_des('pid'))
+            sm = sim.sim_des.connect(des)
+            sm.weight = w
+            # print(sm)
+            sm.save()
+
+    def add_sym_des(pair_list, lc='', rel='', dspln=''):
+
+        print('generate sym design')
+        for pair in pair_list:
+            pair.sort()
+            parts = Part.nodes.filter(
+                Q(part_id__in=pair)
+            )
+            pid = '_'.join([str(p) for p in pair])
+            des_curr = Des.nodes.get_or_none(des_pid=pid)
+            if not des_curr:
+                des_curr = Des(
+                    des_type='sym',
+                    des_pid=pid)
+                des_curr.save()
+
+            for p in parts:
+                p.part_des.connect(des_curr)
+
+        print(type(parts))
+        # print()
+
+    def part_add_sim_name(lc='', rel='', dspln=''):
+        print('add sim name to part')
+        parts = Part.nodes.filter(
+            Q(part_sim_name__contains=lc)
+            & Q(part_sim_name__contains=rel)
+            & Q(part_sim_name__contains=dspln)
+        )
+        for p in parts:
+            sim_name = p.get_sim_name()
+            # p(part_sim_name=sim_name)
+
+            p.part_sim_name = sim_name[0]
+            p.part_sim_abb = sim_name[1]
+            p.save()
+
+    def sim_add_info(OEM):
+        print('update sim info')
+        sims = Sim.nodes.all()
+        for s in sims:
+            if OEM == 'CEVT':
+                if s.sim_path_post.endswith('/'):
+                    s.sim_path_post = s.sim_path_post[:-1]
+                rPath_split = s.sim_path_post.split('/')
+                if len(rPath_split) == 1:
+                    rPath_split = s.sim_path_post.split('\\')
+                    s.sim_path_post = s.sim_path_post.replace('\\', '/')
+
+                runName = s.sim_name
+                release = rPath_split[-4].split('_')[1]
+                dspln = rPath_split[-3]
+
+                abb = runName.split('_')
+                if len(abb) > 3:
+                    loadcase = runName.split('_')[3]
+                    abb = '_'.join([abb[2], abb[-1]])
+                else:
+                    loadcase = runName.split('_')[1]
+                    abb = '_'.join([abb[1], abb[-1]])
+
+                s.sim_abb = abb
+                s.sim_lc = loadcase
+                s.sim_rel = release
+                s.sim_dspln = dspln
+                # print(s)
+                s.save()
 
 
 def get_binout(src):
@@ -584,7 +766,7 @@ def read_binout(src, var1, var2, var3=None):
     # part = d3plot.get_partByID(ids[0])
 
     end = time.time()
-    _trace_time(end - start, 'read_binout')
+    trace_time(end - start, 'read_binout')
     return(curv, t, ids, names2, curv2)
 
 def binout_vals(binout, var1, var2, var3=None):
@@ -624,7 +806,7 @@ def binout_vals(binout, var1, var2, var3=None):
     ids = ids[nonZeroIds]
 
     end = time.time()
-    _trace_time(end - start, 'read_binout')
+    trace_time(end - start, 'read_binout')
     return(curv, t, ids, names2, curv2)
 
 def rmBarrier(ids, idsMax, barrier):
@@ -639,356 +821,8 @@ def rmBarrier(ids, idsMax, barrier):
         idsMax = np.concatenate(idsMax1, idsMax2)
         return(idsMax)
 
-def nrg_nodes(method, lc='', rls0='', dspln=''):
-    feat_list = [
-        "nrg_max",  # 0
-
-        "ti_grad",  # 1
-        "ti_ll",  # 2
-
-        "tn_pct",  # 3
-        "tn_max"]  # 4
- # ------------------------------------------------------------
-    fts_opt = [feat_list[i] for i in [0, 1, 3]]
-    # fts_opt = [feat_list[i] for i in [0, 3]]
-    # fts_id = ['IE', 'ti', 'tn']
-
-    UG.neomodelUpdate.group_pid(lc, rls0, dspln)
-    # for f in fts_opt:
-    #     UG.neomodelUpdate.nrg_behavior(f, method, lc, rls0, dspln)
-    # UG.neomodelUpdate.connect_sim_behav(lc, rls0, dspln)
-    UG.neomodelUpdate.connect_sim_des(lc, rls0, dspln)
-    # UG.neomodelUpdate.connect_behav_des(lc, rls0, dspln)
-
-
-
-
-if __name__ == '__main__':
-    # OEM = 'PAG'
-    # OEM = 'CEVT'
-    # OEM = 'YARIS_BUMPER'
-    OEM = 'YARIS'
-    # OEM = 'TL2PID'
-    # OEM = 'envs'
-    # OEM = 'PEDPRO'
-
-    print('--------------------------------------')
-    print('                                    ')
-    print('LODING DATA FOR {}'.format(OEM))
-    print('                                    ')
-    input('PRESS ENTER TO CONTINUE')
-
-# PAG
-    if OEM == 'PAG':
-        neo4j_bolt('3687', 'ivory')
-        data_path = '/export/PAG_DATA/VORDERWAGEN/002_Daten_Kaan/ROB_VOWA_*'
-        # data_path = '/home/anahita/Projects/PAG/ROB_VOWA_505*'
-        # data_path = '/export/PAG_DATA/VORDERWAGEN/002_Daten_Kaan/ROB_VOWA_*'
-
-        dir_list = glob.glob(data_path)
-
-        with open('src/key_out.npy', 'rb') as f:
-            pids_nodout = np.load(f)
-            coords_nodout = np.load(f)
-
-        with open('src/box.npy', 'rb') as f:
-            pids_box = np.load(f)
-            rng_box = np.load(f)
-            cog_box = np.load(f)
-
-        for dir in dir_list:
-            print(dir)
-            i = 0
-            count = 10
-            sims = glob.glob(dir + '/*')
-            # sims = glob.glob(dir + '/Design0017')
-            ''' load or update all CAE simulations'''
-            for s in sims:
-                print(s)
-                sim = CaeSim(OEM)
-                sim.dataPAG(s)
-                # sim.read_energy_pid(energy_static)
-                # sim.energy_pic(media_path)
-                populate_sim(sim, pids_nodout, coords_nodout)
-                # update_part(sim, pids_box, rng_box, cog_box)
-                i += 1
-                if i == count:
-                    break
-
-# CEVT
-    if OEM == 'CEVT':
-        neo4j_bolt('7687', 'localhost')
-        runSet = [
-            ['3_stv02', ['fp3', 'fo5', 'fod']],
-            ['3_stv0', ['fp3', 'fo5', 'fod']],
-            ['2_stcr', ['fp3', 'fo5', 'fod']],
-            ['3_m1', ['fp3', 'fo5', 'fod']],
-            ['3_stv02', ['fp3', 'fo5', 'fod']],
-            ['3_stv03', ['fp3', 'fo5', 'fod']],
-        ]
-        runSet = [
-            ['3_stv0', ['fp3']],
-            # ['2_stcr', ['fp3']],
-            # ['3_m1', ['fp3']],
-            # ['3_stv03', ['fp3']],
-        ]
-
-        # runSet=[
-        # ['3_stv0', ['si9a', 'sp2b', 'si10a']],
-        # ['3_stv02', ['si9a', 'sp2b', 'si10a']],
-        #     ['3_stv03', ['si9a', 'sp2b', 'si10a']],
-        #     ['3_m1', ['si9a', 'sp2b', 'si10a']],
-        # ]
-
-        # runSet = [
-        #     ['3_stv0', ['rd8l', 'rd8r', 'ri4']],
-        #     ['3_stv02', ['rd8l', 'rd8r', 'ri4']],
-        #     ['3_stv03', ['rd8l', 'rd8r', 'ri4']],
-        #     ['3_m1', ['rd8l', 'rd8r', 'ri4']],
-        # ]
-
-        dspln = 'front'  # 'side' #'rear' # 'front'
-        print(runSet)
-        # nrg_nodes('IE_ti_tn')
-        # UG.connect_sim_des_weighted('nrg_max')
-        for s in runSet:
-            # break
-            rls = s[0]
-            rls0 = rls.split('_')[1]
-            for lc in s[1]:
-                # break
-                proj = 'mma'
-                data = '{2}\\{0}\\{3}\\runs\\*{1}_*'.format(
-                    rls, lc, proj, dspln)
-                root_path = 'S:\\nobackup\\safety\\projects\\'
-                # data = '{1}/{0}/{2}/runs/cm1*'.format(rls, proj, dsp)
-                data = '{2}/{0}/{3}/runs/*{1}_*'.format(rls, lc, proj, dspln)
-                root_path = '/cevt/cae/backup/safety/users/anahita.pakiman1/'
-
-                # 3_stv0, fp3-fo5(084,145-matsum value error), fod
-                # 2_stcr, fp3(019), fo5, fod
-                # recomended fod
-                data_path = os.path.join(root_path, data)
-                # data_path = 'src/CEVT/*fp3*'
-
-                dir_list = glob.glob(data_path)
-                print(data_path)
-                i = 0
-                count = 1
-                for dir in dir_list:
-                    pid = os.getpid()
-                    print(dir)
-                    start = time.time()
-                    s = dir
-                    ''' load or update all CAE simulations'''
-                    sim = CaeSim(OEM)
-                    sim.dataCEVT(s, lc, rls0, dspln)
-                    print('pop done')
-                    # sim.read_energy_pid(energy_static)
-                    # sim.energy_pic(media_path)
-                    populate_sim(sim)
-                    # update_part(sim, pids_box, rng_box, cog_box)
-
-                    i += 1
-                    if i == count:
-                        break
-                print('----------------------------')
-                print(dspln, rls, lc)
-                print(len(dir_list))
-            # connect nodes
-            # print('----------------------------')
-            # print('conect enrgy nodes')
-            # print('----------------------------')
-            # nrg_nodes('IE_ti_tn', lc, rls0, dspln)
-        print(time.time()-start)
-        # Getting usage of virtual_memory in GB ( 4th field)
-        import psutil
-        print('RAM Used (GB):', psutil.virtual_memory()[3]/1000000000)
-
-        python_process = psutil.Process(pid)
-        # memory use in GB...I think
-        memoryUse = python_process.memory_info()[0]/2.**30
-        print('memory use:', memoryUse)
-
-# YARIS
-    if OEM == 'YARIS':
-        oem = oems.oems(OEM)
-        oem.backend_server()
-        lc = 'CCSA_submodel_0'
-        sims = glob.glob(oem.data_path)
-
-        ''' load or update all CAE simulations'''
-        for s in sims:
-            # break
-            print(s)
-            sim = CaeSim(OEM)
-            sim.dataYARIS(s)
-            # sim.read_energy_pid(energy_static)
-            # sim.energy_pic(media_path)
-            populate_sim(sim)
-            # break
-            # update_part(sim, pids_box, rng_box, cog_box)
-
-        # connect nodes
-        nrg_nodes('IE_ti_tn', lc=lc)
-
-        # UG.add_sym_des([
-        #     [2000001, 2000501],
-        #     [2000002, 2000502],
-        #     [2000011, 2000511],
-        #     [2000012, 2000512],
-        #     [3000001, 3000501],
-        #     [3000002, 3000502],
-        #     [3000003, 3000503],
-        #     [3000004, 3000504],
-        #     [3000005, 3000505],
-        #     [3000006, 3000506],
-        #     [3000007, 3000507],
-        #     [3000008, 3000508],
-        #     [3000009, 3000509],
-        # ])
-        # UG.neomodelUpdate.connect_sim_des_weighted('nrg_max', lc=lc)
-
-
-# YARIS_BUMPER
-    if OEM == 'YARIS_BUMPER':
-        neo4j_bolt('7687', 'localhost')
-        data_path = '/home/ndv/data/BUMPER/MAIN_SIM/*.draco'
-        sims = glob.glob(data_path)
-
-        ''' load or update all CAE simulations'''
-        for s in sims:
-            break
-            print(s)
-            sim = CaeSim(OEM)
-            sim.dataYARIS(s)
-            # sim.read_energy_pid(energy_static)
-            # sim.energy_pic(media_path)
-            populate_sim(sim)
-            # update_part(sim, pids_box, rng_box, cog_box)
-
-        # connect nodes
-        # nrg_nodes('IE_ti_tn')
-        UG.connect_sim_des_weighted('nrg_max')
-
-# TL2PID
-    if OEM == 'TL2PID':
-        vehList = {
-            1: {
-                'name': 'TL2PID_12_01',
-                'cnfg': {
-                    'ubdy_name': '01',
-                    'ubdy_spec': 0.08,
-                    'pltf_name': '01',
-                    'pltf_spec': ''}
-            },
-            2: {
-                'name': 'TL2PID_12_02',
-                'cnfg': {
-                    'ubdy_name': '02',
-                    'ubdy_spec': 0.112,
-                    'pltf_name': '01',
-                    'pltf_spec': ''}
-            },
-            3: {
-                'name': 'TL2PID_12_03',
-                'cnfg': {
-                    'ubdy_name': '03',
-                    'ubdy_spec': 0.25,
-                    'pltf_name': '01',
-                    'pltf_spec': ''}
-            },
-            4: {
-                'name': 'TL2PID_12_04',
-                'cnfg': {
-                    'ubdy_name': '04',
-                    'ubdy_spec': 0.35,
-                    'pltf_name': '01',
-                    'pltf_spec': ''}
-            },
-            5: {
-                'name': 'TL2PID_12_05',
-                'cnfg': {
-                    'ubdy_name': '05',
-                    'ubdy_spec': 0.576,
-                    'pltf_name': '01',
-                    'pltf_spec': ''}
-            },
-            6: {
-                'name': 'TL2PID_12_06',
-                'cnfg': {
-                    'ubdy_name': '06',
-                    'ubdy_spec': 0.96,
-                    'pltf_name': '01',
-                    'pltf_spec': ''}
-            }
-        }
-        strc = {
-            'edge': {
-                'src': 2000501,
-                'trgt': 2000500
-            }
-        }
-        oem = oems.oems(OEM)
-        oem.backend_server()
-
-        for v in vehList:
-            print(v)
-            if v in []:  # [2, 3, 4, 6]:  # [1,2,3,4]:
-                continue
-            veh = vehList[v]['name']
-            cnfg = vehList[v]['cnfg']
-            print(veh)
-            p1 = glob.glob(oem.data_path.format(veh))
-            p2 = glob.glob(oem.data_path_val.format(veh))
-            sims = p1 + p2
-
-            for s in sims:
-                # s = '/home/apakiman/leo1/Projects/carGraph/runs/YARIS/full_front/TL2PID_12_01/TL2PID_12_01_0043'  # 235
-                print(s)
-                break
-                sim = CaeSim(OEM)
-                sim.dataTL2PID(s)
-                populate_sim(sim)
-
-        #  load the development tree structure
-            root = oem.root.format(veh)
-            simsTree = glob.glob(os.path.join(root,  "sims.txt"))[0]
-            G = nx.read_gpickle(simsTree)
-            UG.cyUpdate.devTree(G, veh, cnfg, strc, model=False, mm=True)
-            # UG.cyUpdate.TL2PID(G, veh, model=True)
-
-        # add wieght
-            # w = '[p.ti_grad, p.tn_max, p.nrg_max]'
-            # w = 'p.nrg_max * (p.tn_max -p.ti_grad)/s.sim_ke_tot_max/2'
-            # UG.cyUpdate.nrgWeight(w)
-
-# envs
-    if OEM == 'envs':
-        oem = oems.oems(OEM)
-        oem.backend_server()
-        sims = glob.glob(oem.data_path)
-
-        for s in sims:
-            print(s)
-            sim = CaeSim(OEM)
-            sim.dataENVS(s)
-            populate_sim(sim)
-            break
-
-
-# PEDPRO
-    if OEM == 'PEDPRO':
-        oem = oems.oems(OEM)
-        oem.backend_server()
-        sims = glob.glob(oem.data_path)
-
-        for s in sims:
-            print(s)
-            sim = CaeSim(OEM)
-            sim.dataPEDPRO(s)
-            populate_sim(sim)
-
-        # connect nodes
-        lc = ''
-        nrg_nodes('IE_ti_tn', lc=lc)
+def trace_time(t, name, flag=False):
+    if flag:
+        print('--------------------------------------------------------------')
+        print('{}:'.format(name), t)
+        print('--------------------------------------------------------------')
