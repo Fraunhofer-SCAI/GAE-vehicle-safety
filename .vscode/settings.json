@@ -1,0 +1,14 @@
+{
+  "grammarly.selectors": [
+    {
+      "language": "python",
+      "scheme": "file"
+    },
+    {
+      "language": "markdown",
+      "scheme": "file",
+    }
+  ],
+  "grammarly.config.documentDialect": "british",
+  "python.analysis.extraPaths": ["./transferDOE/gnn_tries"]
+}

@@ -1,4 +1,4 @@
-load\_data package
+Load Data
 ==================
 
 .. automodule:: ld_data
@@ -6,26 +6,8 @@ load\_data package
    :undoc-members:
    :show-inheritance:
 
-Subpackages
------------
 
-.. toctree::
-   :maxdepth: 4
-
-   ld_data.migrations
-
-Submodules
-----------
-
-load\_data.admin module
------------------------
-
-.. automodule:: ld_data.admin
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-load\_data.apps module
+ld\_data.apps 
 ----------------------
 
 .. automodule:: ld_data.apps
@@ -33,23 +15,17 @@ load\_data.apps module
    :undoc-members:
    :show-inheritance:
 
-load\_data.models module
-------------------------
+Data Model
+--------------------------
+
 
 .. automodule:: ld_data.models
    :members:
    :undoc-members:
    :show-inheritance:
 
-load\_data.tests module
------------------------
 
-.. automodule:: ld_data.tests
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-load\_data.urls module
+URLS
 ----------------------
 
 .. automodule:: ld_data.urls
@@ -57,7 +33,7 @@ load\_data.urls module
    :undoc-members:
    :show-inheritance:
 
-load\_data.views module
+Views
 -----------------------
 
 .. automodule:: ld_data.views

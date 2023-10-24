@@ -7,6 +7,7 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'gae.settings'
 django.setup()
 
 
+
 # Configuration file for the Sphinx documentation builder.
 #
 # For the full list of built-in configuration values, see the documentation:
@@ -15,7 +16,7 @@ django.setup()
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'GAE-vehicle-safety'
+project = 'GAE-Graph Assisted Engineering'
 copyright = '2023, Anahita Pakiman'
 author = 'Anahita Pakiman'
 release = '1.0.0'
@@ -40,3 +41,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+#
+
+# autodoc_mock_imports = ['django']
+

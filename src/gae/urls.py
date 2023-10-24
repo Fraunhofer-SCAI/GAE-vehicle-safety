@@ -28,10 +28,10 @@ urlpatterns = [
 
     path('', include('django.contrib.auth.urls')),
 
-    re_path('^nrg_fts_dash$', gae.views.dash_update, name="nrg_fts_dash"),
-    re_path('^sim_rnk_dash$', gae.views.dash_update, name="sim_rnk_dash"),
-    re_path('^ld_pth_dtn$', gae.views.dash_update, name="ld_pth_dash"),
-    re_path('^django_plotly_dash/', include('django_plotly_dash.urls')),
+    re_path('^nrg_fts_dash$', gae.views.dash_update, name="nrg_fts_dash"), # Energy features dashboard
+    re_path('^sim_rnk_dash$', gae.views.dash_update, name="sim_rnk_dash"),  # SimRankTargeted dashboard
+    re_path('^ld_pth_dtn$', gae.views.dash_update, name="ld_pth_dash"), # Load path detection dashboard
+    re_path('^django_plotly_dash/', include('django_plotly_dash.urls')), 
     path('<str:dash>/', gae.views.dash_update, name='dash_update'),
     path('ld_data/', include('ld_data.urls')), 
 

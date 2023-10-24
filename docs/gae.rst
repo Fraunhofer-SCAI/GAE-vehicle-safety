@@ -1,4 +1,4 @@
-gae package
+GAE package
 ===========
 
 .. automodule:: gae
@@ -6,24 +6,7 @@ gae package
    :undoc-members:
    :show-inheritance:
 
-Submodules
-----------
 
-gae.asgi module
----------------
-
-.. automodule:: gae.asgi
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-gae.settings module
--------------------
-
-.. automodule:: gae.settings
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 gae.urls module
 ---------------
@@ -31,12 +14,13 @@ gae.urls module
 .. automodule:: gae.urls
    :members:
    :undoc-members:
-   :show-inheritance:
 
-gae.wsgi module
+
+
+gae.oems module
 ---------------
 
-.. automodule:: gae.wsgi
+.. automodule:: gae.oems
    :members:
    :undoc-members:
    :show-inheritance:
