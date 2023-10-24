@@ -1,5 +1,5 @@
 # PYTHON script
-from gae.constants import OEM_NAME, IE_UNIT, TIME_UNIT, DATA_PATH, SIM_PATTERN
+from gae.constants import OEM_NAME, IE_UNIT, TIME_UNIT, DATA_PATH, SIM_PATTERN, PIC_NAME
 
 import numpy as np
 import pandas as pd
@@ -48,6 +48,8 @@ class QueyNrgFts:
     def feed_normalization(self):
 
         def nrg_normalized(nameReg, fts, norm_opt):
+            driver = self.oem.driver
+
             with driver.session() as session:
                 func = ["max", "min"]
                 result_norm = session.run(
@@ -60,9 +62,9 @@ class QueyNrgFts:
                 fts[:, 2] = (fts[:, 2] - fts[:, 1])  # dt
                 fts_nrm = (fts) / (MAX)
                 return(fts_nrm)
-        sims_nrg = []
-        sims_pid = []
-        sims = []
+        
+        sims_nrg, sims_pid, sims = [], [], []
+        
         for s in self.simList:
             sim = Sim.nodes.get_or_none(sim_name=s)
             if self.pids_sel:
@@ -124,6 +126,7 @@ class QueyNrgFts:
             for i in range(n):
                 colors.append('#%06X' % randint(0, 0xFFFFFF))
             return(colors)
+        
         self.ft_opt = ["nrg_max", "ti_grad", "tn_pct"]
         self.norm_opt = []
         self.nrmList = '.*'
@@ -142,7 +145,7 @@ class QueyNrgFts:
         if out_normalized:
             sims_nrg, sims_pid, sims = out_normalized
         else:
-            return
+            return 
         
         try:
             sims_pid = sims_pid[:, :nPID]
@@ -155,9 +158,8 @@ class QueyNrgFts:
         lcU = np.unique(lc_list).tolist()
         rlsU = np.unique(rls_list).tolist()
         c_lc = lcU
-        # c_lc = get_color(len(lcU))
         c_rls = rlsU
-        # c_rls = get_color(len(rlsU))
+        
         try:
             pidU = np.sort(np.unique(sims_pid))
             ntPid = sims_pid.shape[1]
@@ -167,25 +169,27 @@ class QueyNrgFts:
                 sims_pid_flat += list(s)
             pidU = np.sort(np.unique(np.array(sims_pid_flat)))
             ntPid = min([s.shape for s in sims_pid])[0]
-        # pidU, countPid = self.make_pidList(regs, pidU.tolist()) doens't work when more loadceses are loaded as regs and should be edited to work with regs_list
+
         pidU, countPid = self.make_pidList('.*', pidU.tolist())
         pidU = np.array(pidU)
         pidU = np.delete(pidU, np.argwhere(pidU == 0))
         c_pid = get_color(len(pidU))
+
         def ordinal(n): return "%d%s" % (
             n, "tsnrhtdd"[(n // 10 % 10 != 1) * (n % 10 < 4) * n % 10::4])
         c_ord = np.repeat(
             np.array([[ordinal(x)
                        for x in range(1, ntPid + 1)]], dtype=object),
-            # [get_color(sims_pid.shape[1])],
             len(sims), axis=0)
         c_ord[:, nOrd:] = '{0} to {1}'.format(
             ordinal(nOrd + 1), ordinal(ntPid))
-        # c = ['b', 'r', 'g', 'c', 'm', 'y', 'k', '#4AFFB5', '#593F50']
+        
         df = pd.DataFrame()
         for i, pi in enumerate(pidU):
             id = np.where(sims_pid == pi)
             dfi = pd.DataFrame(sims_nrg[id], columns=['IE', 'ti', 'tn'])
+
+
             dfi['dt'] = sims_nrg[id][:, 2] - sims_nrg[id][:, 1]
             dfi['PID'] = int(pi)
             sim = np.array(sims)[id[0]]
@@ -199,25 +203,11 @@ class QueyNrgFts:
             lc_list_pi = [s.split('_')[self.oem.lc_pos] for s in sim]
             dfi['c_lc'] = [c_lc[lcU.index(lci)] for lci in lc_list_pi]
             dfi['c_rls'] = [c_rls[rlsU.index(ri)] for ri in rls_list_pi]
-            relPath = '/'.join(self.oem.save_path.split('/')[-2:])
-            dfi['pic'] = ['./{0}/{1}_{2}_iso.png'.format(
-                relPath, s, int(pi)) for s in sim]
-            # for missing data in cevt
-            # for pici in dfi['pic']:
-            #     if glob.glob(pici) == []:
-            #         makePath = (
-            #             # self.oem.save_path +
-            #             self.oem.save_path +
-            #             '/*_{1}_*{0}*_iso.png'.format(int(pi), dfi['c_rls'][0]))
-            #         pic_pid = glob.glob(makePath)
-            #         try:
-            #             pic = pic_pid[0].split('/')[-1]
-            #             dfi['pic'] = [
-            #                 './{0}/{1}'.format(relPath, pic) for s in sim]
-            #         except IndexError:
-            #             dfi['pic'] = ['' for s in sim]
-            #             pass
-            df = df.append(dfi)
+            # relPath = '/'.join(self.oem.save_path.split('/')[-2:])
+            dfi['pic'] = ['YARIS/{0}_{1}_iso.png'.format(
+                PIC_NAME, int(pi)) for s in sim]
+            
+            df = pd.concat([df, dfi])
             df = df.reset_index(drop=True)
         df = df.sort_values(by=['PID'])
         df['PID'] = df['PID'].astype(str)
