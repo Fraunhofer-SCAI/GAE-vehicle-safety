@@ -4,7 +4,7 @@ from . import views
 app_name = 'ld_data'
 
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'), # Load data to the database
+    path('load/', views.LoadView, name='load'), # Load data to the database
     path('ontology-report/', views.ontology_report_view, name='ontology_report'),  # Ontology documentatin
 ]
 

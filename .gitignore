@@ -31,6 +31,7 @@ note_scripts/LSDYNA_script/
 db.sqlite3
 
 
+**/.env
 
 ## Core latex/pdflatex auxiliary files:
 *.aux

@@ -1,0 +1,41 @@
+{% extends 'layouts/base.html' %}
+{% load static %}
+{%load plotly_dash%}
+
+{% block content %}
+
+<div class="container-fluid py-4">
+
+
+
+
+	<div class="row">
+
+		<div class="card z-index-2">
+			<div class="card-body p-3">
+                {% if messages %}
+                <ul class="messages">
+                    {% for message in messages %}
+                        <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+				
+			</div>
+		  </div>
+		</div>
+
+	  
+		  
+	</div>
+
+
+
+
+	{% include "includes/footer.html" %}
+
+  </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
