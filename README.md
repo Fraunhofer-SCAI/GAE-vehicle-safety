@@ -122,5 +122,5 @@ This project has in total Five modules. This repo already includes:
 The re-maining repos are under transfer from folllowing repo, unhold due to publications. for more information [contact](https://github.com/antahiap):
 
 - `sim_rnk`: based on [paper](https://ins.uni-bonn.de/media/public/publication-media/01_KG_nrg_simlrty_simrnk_8qa35n3.pdf?name=01_KG_nrg_simlrty_simrnk.pdf), [current code](https://github.com/antahiap/nrg_simRank)
-- `physc_grph`: based on [paper], (https://link.springer.com/chapter/10.1007/978-3-031-40960-8_14), [current code](https://github.com/antahiap/nrg_mdl)
+- `physc_grph`: based on [paper](https://link.springer.com/chapter/10.1007/978-3-031-40960-8_14), [current code](https://github.com/antahiap/nrg_mdl)
 - `ld_pth_detn`: based on [paper](https://link.springer.com/chapter/10.1007/978-3-031-40960-8_14), [current code](https://github.com/antahiap/nrg_mdl)
