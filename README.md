@@ -37,6 +37,24 @@ For morinformation of graph modeling, [link](https://arxiv.org/abs/2209.14910).
 <br />
 
 
+## Quick setup for displaying simKnowledge data
+
+- Run these commands from the terminal. (After starting neo4j server wait for few seconds until it is up and running.)
+
+```
+mkdir test_gae
+cd test_gae
+git clone https://github.com/Fraunhofer-SCAI/GAE-vehicle-safety.git
+cd GAE-vehicle-safety
+./setup.sh
+gnome-terminal -- ./start_neo4j.sh
+./start_django.sh
+```
+
+- Open the browser to `http://127.0.0.1:8000/`
+
+- Script `setup.sh` should be called only once !. To view the results next time, one can call only the `start_neo4j.sh` and `start_django.sh` scripts.
+
 
 ## Dependencies 
 Install the requirements via conda or python venv for python 3.10.8, for anacona  envs:

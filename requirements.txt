@@ -32,3 +32,4 @@ django-plotly-dash==1.7.2
 rdflib==6.3.2
 pyLODE==3.0.1
 django-extensions
+matplotlib
