@@ -1,4 +1,4 @@
-# Graph Assisted Engineering in Vehicle SafetyGAE-vehicle-safet
+# Graph Assisted Engineering in Vehicle SafetyGAE-vehicle-safety
 
 GAE is a Django project (Python) for the creation and study of the graph database for the CAE models as a Graph to build a knowledge graph for CAE. Converting Computer Aided Engineering (CAE) to Graph Aided Engineering (GAE).
 
@@ -20,7 +20,7 @@ GAE is a graph modeling for CAE analysis in automotive R&D development processes
 The first release of GAE considers vehicle safety with [EuroNCAP](https://www.euroncap.com/en) safety requirements.
 We connect CAE data to the protocols that are used to assess vehicle safety performances.
 The R&D process includes CAD engineering and safety attributes, with a focus on multidisciplinary problem-solving.
-For morinformation of graph modeling, [link](https://arxiv.org/abs/2209.14910). 
+For more information of graph modeling, [link](https://arxiv.org/abs/2209.14910). 
 
 <br />
 
@@ -28,7 +28,7 @@ For morinformation of graph modeling, [link](https://arxiv.org/abs/2209.14910).
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="##Run-Database-Server">Run Database Servery</a></li>
+    <li><a href="##Run-Database-Server">Run Database Server</a></li>
     <li><a href="##Databases">Databases</a></li>
         
   </ol>
@@ -74,14 +74,14 @@ source envs/bin/activate
 
 ## Run Database Server
 
-Currently the database is availabledump`file that is that is developed with`neo4j-community-4.2.4`dump file can be loaded into `neo4j-community-4.2.4`. We provide this version as it is no longer availble on neo4j webpage. you can extract it and then run the server with
+Currently the database is available as a dump file that is that is developed with `neo4j-community-4.2.4`. The dump file can be loaded into `neo4j-community-4.2.4`. We provide this version as it is no longer availble on neo4j webpage. You can extract it and then run the server with
 
 ```
 tar -xzvf neo4j-community-4.2.4.tar.gz
 neo4j-community-4.2.4/bin/neo4j start
 ```
 
-Then you can load one od available `.dump` file databases to your database.
+Then you can load one of the available `.dump` file databases to your database.
 
 ```
 ./neo4j-community-4.2.4/bin/neo4j-admin load --from=../database/FILE.dump --database=neo4j --force
@@ -121,14 +121,14 @@ DATA_PATH = '/home/ndv/stud/data/YARIS/full_front/CCSA_submodel/crash_modes/'
 SIM_PATTERN = 'CCSA_submodel_60*'
 ```
 
-The units are defined base on the configuration of your model required to convert the values to kNmm, ms. THis example is for model with units of Nmm, s.
+The units are defined base on the configuration of your model required to convert the values to kNmm, ms. This example is for a model with units of Nmm, s.
 
-Finally you can strat the Django server locally with:
+Finally you can start the Django server locally with:
 ```
 python src/manage.py runserver
 ```
 
-This project has in total Five modules. This repo already includes:
+This project has in total five modules. This repo already includes:
 
 - `ld_data`: based on [paper](https://ieeexplore.ieee.org/document/10030078), App links:
     - Load/ re-load data to the database based on `constants.py` configuratoion: `ld_data/load`
@@ -137,7 +137,7 @@ This project has in total Five modules. This repo already includes:
     - `nrg_fts_dash`: energy feature dash
 
 
-The re-maining repos are under transfer from folllowing repo, unhold due to publications. for more information [contact](https://github.com/antahiap):
+The re-maining repos are under transfer from the following repo, on hold due to publications. For more information [contact](https://github.com/antahiap):
 
 - `sim_rnk`: based on [paper](https://ins.uni-bonn.de/media/public/publication-media/01_KG_nrg_simlrty_simrnk_8qa35n3.pdf?name=01_KG_nrg_simlrty_simrnk.pdf), [current code](https://github.com/antahiap/nrg_simRank)
 - `physc_grph`: based on [paper](https://link.springer.com/chapter/10.1007/978-3-031-40960-8_14), [current code](https://github.com/antahiap/nrg_mdl)
