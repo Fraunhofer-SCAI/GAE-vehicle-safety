@@ -2,7 +2,7 @@ martor
 gunicorn
 python-decouple
 numpy
-neomodel
+neomodel==4.0.4
 sphinx
 sphinx_rtd_theme
 recommonmark

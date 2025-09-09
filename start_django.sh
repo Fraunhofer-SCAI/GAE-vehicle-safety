@@ -2,8 +2,9 @@
 
 cd ..
 
-# Activate installed python
-eval "$("py-3.8/bin/conda" shell.bash hook)"
+# Use the installed python
+pypath=$(pwd)/"py-3.8"
+export PATH="$pypath/bin":$PATH
 
 cd GAE-vehicle-safety/src/
 python manage.py runserver
